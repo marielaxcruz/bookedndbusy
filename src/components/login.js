@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Form, Card, Button} from 'react-bootstrap';
 
 
 class SignIn extends Component {
@@ -19,13 +20,14 @@ class SignIn extends Component {
             register : !prevState.register
         }))
     }
-    
+    // a form’s submit button in React will always trigger a browser refresh to submit the data into a backend system. This is bad because the behavior you defined in the onSubmit event function will be ignored by the browser.
     handleSubmit = (event) => {
         event.preventDefault();
         console.log(this.state.formdata)
         }
     
-    
+    // will receive the values and will update the state (this.state) and we will update
+    // the formdata
     handleInputs = (event) => {
         let firstname = event.target.name;
         let value = event.target.value;
