@@ -6,7 +6,9 @@ import Home from './components/home'
 import PrivateRoute from "./PrivateRoute";
 import SignUp from "./components/signup";
 import Login from "./components/loginn";
-//import SignIn from './components/login'
+import Header from "./components/header";
+import Users from './components/userinfo';
+import Maps from './components/googlemaps'
 
 // wrapping our layer with auth provider so everything below it will have access to current user through the context api
 //function App() {
@@ -15,12 +17,16 @@ const App = () => {
     <AuthProvider>
       <Router>
         <div>
+          <Header />
           <PrivateRoute exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={SignUp} />
+          <Route exact path="/users" component={Users} />
+          <Route exact path="/map" component={Maps} />
         </div>
       </Router>
     </AuthProvider>
+
   );
 };
 

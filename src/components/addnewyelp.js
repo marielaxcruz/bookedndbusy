@@ -1,0 +1,1 @@
+// the user will interact with the yelp api and save the searches they visited on their trip 

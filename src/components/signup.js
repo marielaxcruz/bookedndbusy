@@ -28,10 +28,10 @@ const SignUp = ({ history }) => {
           Password
           <input name="password" type="password" placeholder="Password" />
         </label>
-        <label>
+        {/*<label>
           Password Again
           <input name="password" type="password" placeholder="Password" />
-        </label>
+        </label>*/}
         <button type="submit">Register</button>
       </form>
     </div>
