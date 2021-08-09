@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import firebaseConfig from "../firebase.js";
+//import { Link } from 'react-router-dom';
+//import firebaseConfig from "../firebase.js";
 
 
 const MainPage = () => {
