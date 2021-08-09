@@ -10,11 +10,13 @@ import Header from "./components/header";
 import Users from './components/userinfo';
 import Maps from './components/googlemaps';
 import MainPage from "./components/mainpage";
+import NewCity from "./components/addnewcity";
 
 // wrapping our layer with auth provider so everything below it will have access to current user through the context api
 //function App() {
 const App = () => {
   return (
+    
     <AuthProvider>
       <Router>
         <div>
@@ -25,6 +27,7 @@ const App = () => {
           <Route exact path="/users" component={Users} />
           <Route exact path="/map" component={Maps} />
           <Route exact path="/home" component={MainPage} />
+          <Route exact path="/newcity" component={NewCity} />
         </div>
       </Router>
     </AuthProvider>

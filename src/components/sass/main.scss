@@ -1,0 +1,12 @@
+// above the import bc default statement, we want to declares our first value 
+// custom variable
+$primary: #78ccd3;
+
+
+// import bootstrap all the other scss files and we can override and update  the og ones with our own custom variables 
+//@import 'node_modules/bootstrap/scss/bootstrap.scss';
+@import '/Users/marielacruz/ada/bookedndbusy/node_modules/bootstrap/scss/bootstrap.scss';
+
+
+
+

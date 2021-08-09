@@ -5,7 +5,7 @@ const Home = () => {
     return (
     <div>
     <h1>Home, Welcome user!</h1>
-    <button onClick={() => firebaseConfig.auth().signOut()}>Sign out</button>
+    <button class="btn btn-primary" onClick={() => firebaseConfig.auth().signOut()}>Sign out</button>
     </div>
 );
 };

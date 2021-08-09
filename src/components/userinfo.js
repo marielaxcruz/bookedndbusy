@@ -50,6 +50,7 @@ class Users extends Component {
         console.log("rendering users")
         return(
             <main>
+                <link href="/css/main.min.css" rel="stylesheet"></link>
                 <table className="table table-dark">
                     <thread>
                         <tr>
@@ -66,7 +67,7 @@ class Users extends Component {
                     </tbody>
 
                 </table>
-            I should be able to see all my user info
+                <p class="text-warning"> I should be able to see all my user info </p>
             </main>
         )
     }
