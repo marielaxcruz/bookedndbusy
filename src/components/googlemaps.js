@@ -4,11 +4,11 @@ import {
     useLoadScript,
     Marker,
     InfoWindow,
-    MarkerClusterer,
+    //MarkerClusterer,
 } from "@react-google-maps/api";
-import { optionalArrayOfString } from 'assert-plus';
+//import { optionalArrayOfString } from 'assert-plus';
 // date formating of when the pointer was added 
-import {formatRelative, subDays } from 'date-fns';
+import { formatRelative } from 'date-fns';
 
 import usePlacesAutocomplete, {
     getGeocode,
@@ -22,7 +22,6 @@ import {
     ComboboxPopover,
     ComboboxList,
     ComboboxOption,
-    ComboboxOptionText,
 } from "@reach/combobox";
 
 //import "@reach/combobox/styles.css"

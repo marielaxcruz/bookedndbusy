@@ -47,6 +47,7 @@ class Users extends Component {
     )
     render(){
         //const users = this.state.users;
+        console.log("rendering users")
         return(
             <main>
                 <table className="table table-dark">

@@ -1,14 +1,15 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { AuthProvider } from "./auth";
-import firebase from './firebase';
+//import firebase from './firebase';
 import Home from './components/home'
 import PrivateRoute from "./PrivateRoute";
 import SignUp from "./components/signup";
 import Login from "./components/loginn";
 import Header from "./components/header";
 import Users from './components/userinfo';
-import Maps from './components/googlemaps'
+import Maps from './components/googlemaps';
+import MainPage from "./components/mainpage";
 
 // wrapping our layer with auth provider so everything below it will have access to current user through the context api
 //function App() {
@@ -23,6 +24,7 @@ const App = () => {
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/users" component={Users} />
           <Route exact path="/map" component={Maps} />
+          <Route exact path="/home" component={MainPage} />
         </div>
       </Router>
     </AuthProvider>
