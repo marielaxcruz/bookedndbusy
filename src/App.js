@@ -11,6 +11,9 @@ import Users from './components/userinfo';
 import Maps from './components/googlemaps';
 import MainPage from "./components/mainpage";
 import NewCity from "./components/addnewcity";
+import NewYelp from "./components/addnewyelp";
+import NewPhotos from "./components/addnewphotos";
+import NewJournal from "./components/addnewjournal";
 
 // wrapping our layer with auth provider so everything below it will have access to current user through the context api
 //function App() {
@@ -28,6 +31,9 @@ const App = () => {
           <Route exact path="/map" component={Maps} />
           <Route exact path="/home" component={MainPage} />
           <Route exact path="/newcity" component={NewCity} />
+          <Route exact path="/newyelp" component={NewYelp} />
+          <Route exact path="/newphoto" component={NewPhotos} />
+          <Route exact path="/newjournal" component={NewJournal} />
         </div>
       </Router>
     </AuthProvider>

@@ -35,6 +35,15 @@ const Header = () => {
                         <li className="nav-item">
                             <Link className="nav-link" to="/newcity">Add a new city</Link>
                         </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/newyelp">Add a Yelp Place</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/newphoto">Add Photos</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/newjournal">Add Journal</Link>
+                        </li>
                     </ul>
                 </div>
             </nav>

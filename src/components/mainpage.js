@@ -1,7 +1,7 @@
 import React from 'react';
 //import { Link } from 'react-router-dom';
 //import firebaseConfig from "../firebase.js";
-import '/Users/marielacruz/ada/bookedndbusy/src/components/mainpage.css';
+import './mainpage.css';
 
 const MainPage = () => {
     return (
