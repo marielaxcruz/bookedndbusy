@@ -5,7 +5,7 @@ import React from "react";
 const NewYelp = () => {
     return (
         <div>
-        <h1>Adding A new Yelp location</h1>
+        <h1 class="display-6">Adding A new Yelp location</h1>
         <form >
             <label>
             Yelp Search Button 

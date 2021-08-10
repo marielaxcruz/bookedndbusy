@@ -11,7 +11,7 @@ const NewPhotos = () => {
     return (
         //<div>
         <div>
-            <h1>Add Photos to your adventure in CITY NAME COUNTRY NAME</h1>
+            <h1 class="display-6">Add Photos to your adventure in CITY NAME COUNTRY NAME</h1>
         <form>
         <div class="form-group">
         <label for="exampleFormControlFile1">Example file input</label>

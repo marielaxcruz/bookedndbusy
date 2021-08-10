@@ -7,7 +7,7 @@ import React from "react";
 const NewCity = () => {
 return (
     <div>
-    <h1>Adding A New Adventure</h1>
+    <h1 class="display-6">Adding A New Adventure</h1>
     <form >
         <label>
         City 

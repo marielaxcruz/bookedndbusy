@@ -4,16 +4,19 @@ import React from "react";
 const NewJournal = () => {
     return (
         <div>
-        <h1>Add a Journal Entry</h1>
+        <h1 class="display-6">Add a Journal Entry</h1>
         <form >
             <label>
-            Journal: Reflect and write on your experience of the day. example prompts: Write about the people that you have interacted with.
-            Write about the food.What did you like/dislike most about today, and why?
-            <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg"></input>
-            </label>
-            <label>
-            Country
-            <input name="country" placeholder="Country" />
+            <p class="fst-italic" >Example Prompts: 
+            <ul>
+                <li>Write about the people that you have interacted with.</li>
+                <li>Write about the food.</li>
+                <li>What did you like/dislike most about today, and why?</li>
+                <li>What plan/adventure are you looking forward to on your trip?</li>
+            </ul>
+            </p>
+            <p>Reflect & write on your experience of the day.</p>
+            <input class="input-group input-group-lg" type="text" placeholder="Today was an adventurous day because ..."></input>
             </label>
             <button class="btn btn-primary" type="submit">Next</button>
         </form>
@@ -22,5 +25,7 @@ const NewJournal = () => {
     }
     
     //onSubmit={handleAddNew}
+
+    // class="form-control form-control-lg" type="text" 
     
     export default NewJournal;

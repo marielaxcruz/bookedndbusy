@@ -9,10 +9,10 @@ const MainPage = () => {
     <div class="wrapper">
     <div class="static-txt">Keep all your</div>
     <ul class="dynamic-txts">
-        <li><span>memories,</span></li>
-        <li><span>photos,</span></li>
-        <li><span>places visited,</span></li>
-        <li><span>journal entries</span></li>
+        <li><span>memories</span></li>
+        <li><span>photos</span></li>
+        <li><span>places visited</span></li>
+        <li><span>journal entries </span></li>
     </ul>
     <div class="static-txt">in your adventure book</div>
 
