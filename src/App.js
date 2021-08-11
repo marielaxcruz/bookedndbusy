@@ -7,7 +7,7 @@ import SignUp from "./components/signup";
 import Login from "./components/loginn";
 import Header from "./components/header";
 import Users from './components/userinfo';
-import Maps from './components/googlemaps';
+//import Maps from './components/googlemaps';
 import MainPage from "./components/mainpage";
 import NewCity from "./components/addnewcity";
 import NewYelp from "./components/addnewyelp";

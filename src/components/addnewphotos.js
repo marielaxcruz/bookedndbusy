@@ -27,9 +27,11 @@
 //    export default NewPhotos;
 
 // this component will redirect to the form for adding photos to their adventure  
-import React, { useState, useEffect } from 'react';
-import { storage, storageRef , usersCollection} from '../firebase.js'
-import { withRouter, Redirect } from "react-router";
+import React from 'react';
+// import React, { useState, useEffect } from 'react';
+import { storageRef , usersCollection} from '../firebase.js'
+// import { storage, storageRef , usersCollection} from '../firebase.js'
+//import { withRouter, Redirect } from "react-router";
 import SideBar from "./SideBar";
 
 // the props that are being passed down is the user id and the lat/lng of pin the user is currently adding photos to their adventure book 
