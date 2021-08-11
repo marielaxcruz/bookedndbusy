@@ -93,6 +93,7 @@ export default function Maps(){
         onLoad={onMapLoad}
 
         >
+            <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyDif6oRl4k8ZlmtDyZrKW6O64KM8Ib7Ob"></script>
             {markers.map((marker) => (
             <Marker key={marker.time.toISOString()} 
             position ={{lat:marker.lat, lng: marker.lng}}
