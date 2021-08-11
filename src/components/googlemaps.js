@@ -34,8 +34,8 @@ const mapContainerStyle = {
     height: "50vh",
 };
 const center = {
-    lat: -12.046373,
-    lng: -77.0428,
+    lat: 10,
+    lng: 0,
 }
 const options ={
     styles: mapstyles,
@@ -83,11 +83,10 @@ export default function Maps(){
 
     return (
     <div>
-        <h1>The User's Adventures </h1>
         <Search panTo ={panTo} />
         <GoogleMap 
         mapContainerStyle={mapContainerStyle} 
-        zoom={8}
+        zoom={2}
         center={center}
         options={options}
         onClick={onMapClick}

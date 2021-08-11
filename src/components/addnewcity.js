@@ -1,5 +1,6 @@
 import React from "react";
 import SideBar from "./SideBar";
+import Maps from "./googlemaps";
 // import React, { useCallback, useContext } from "react";
 ////import { withRouter, Redirect } from "react-router";
 //import firebaseConfig from 'firebase';
@@ -9,7 +10,8 @@ const NewCity = () => {
 return (
     <div>
         <SideBar />
-    <h1 class="display-6">Adding A New Adventure</h1>
+        <Maps />
+    <h1 class="display-6">Add A New Adventure</h1>
     <form >
         <label>
         City 

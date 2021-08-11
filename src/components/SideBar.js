@@ -16,9 +16,9 @@ const SideBar = () => {
                         <li>
                             <Link className="nav-link" to="/users">User Info from Firestore</Link>
                         </li>
-                        <li className="nav-item">
+                        {/*<li className="nav-item">
                             <Link className="nav-link" to="/map">Display Google Map</Link>
-                        </li>
+                        </li>*/}
                         <li className="nav-item">
                             <Link className="nav-link" to="/newcity">Add a new city</Link>
                         </li>
