@@ -27,13 +27,13 @@ const App = () => {
           <PrivateRoute exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={SignUp} />
-          <Route exact path="/users" component={Users} />
-          <Route exact path="/map" component={Maps} />
+          <PrivateRoute  exact path="/users" component={Users} />
+          <PrivateRoute exact path="/map" component={Maps} />
           <Route exact path="/home" component={MainPage} />
-          <Route exact path="/newcity" component={NewCity} />
-          <Route exact path="/newyelp" component={NewYelp} />
-          <Route exact path="/newphoto" component={NewPhotos} />
-          <Route exact path="/newjournal" component={NewJournal} />
+          <PrivateRoute exact path="/newcity" component={NewCity} />
+          <PrivateRoute exact path="/newyelp" component={NewYelp} />
+          <PrivateRoute exact path="/newphoto" component={NewPhotos} />
+          <PrivateRoute exact path="/newjournal" component={NewJournal} />
         </div>
       </Router>
     </AuthProvider>

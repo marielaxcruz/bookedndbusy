@@ -1,9 +1,11 @@
 import React from "react";
+import SideBar from "./SideBar";
 
 
 const NewJournal = () => {
     return (
         <div>
+            <SideBar />
         <h1 class="display-6">Add a Journal Entry</h1>
         <form >
             <label>
@@ -21,6 +23,7 @@ const NewJournal = () => {
             <button class="btn btn-primary" type="submit">Next</button>
         </form>
         </div>
+
     );
     }
     

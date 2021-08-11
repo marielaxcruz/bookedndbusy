@@ -1,4 +1,5 @@
 import React from "react";
+import SideBar from "./SideBar";
 // import React, { useCallback, useContext } from "react";
 ////import { withRouter, Redirect } from "react-router";
 //import firebaseConfig from 'firebase';
@@ -7,6 +8,7 @@ import React from "react";
 const NewCity = () => {
 return (
     <div>
+        <SideBar />
     <h1 class="display-6">Adding A New Adventure</h1>
     <form >
         <label>

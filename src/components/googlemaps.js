@@ -30,8 +30,8 @@ import mapstyles from './mapstyles';
 // new variable to avoid too many rerenders 
 const libraries = ["places"]
 const mapContainerStyle = {
-    width: '100vw',
-    height: "100vh",
+    width: '50vw',
+    height: "50vh",
 };
 const center = {
     lat: -12.046373,

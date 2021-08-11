@@ -6,11 +6,13 @@
 
 
 import React from "react";
+import SideBar from "./SideBar";
 
 const NewPhotos = () => {
     return (
         //<div>
         <div>
+            <SideBar />
             <h1 class="display-6">Add Photos to your adventure in CITY NAME COUNTRY NAME</h1>
         <form>
         <div class="form-group">
