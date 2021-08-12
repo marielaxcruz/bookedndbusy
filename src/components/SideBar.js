@@ -13,17 +13,11 @@ const SideBar = () => {
             <nav>
                 <div>
                     <ul class="list-unstyled">
-                        <li>
-                            <Link className="nav-link" to="/users">User Info from Firestore</Link>
-                        </li>
-                        {/*<li className="nav-item">
-                            <Link className="nav-link" to="/map">Display Google Map</Link>
-                        </li>*/}
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/newcity">Add a new city</Link>
+                    <li className="nav-item">
+                            <Link className="nav-link" to="/newdate">Add Travel Date</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/newyelp">Add a Yelp Place</Link>
+                            <Link className="nav-link" to="/newcity">Add Location</Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/newphoto">Add Photos</Link>
@@ -32,8 +26,16 @@ const SideBar = () => {
                             <Link className="nav-link" to="/newjournal">Add Journal</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/newdate">Add New Date</Link>
+                            <Link className="nav-link" to="/newyelp">Add a Yelp Place</Link>
                         </li>
+                        <li>
+                            <Link className="nav-link" to="/users">User Info from Firestore</Link>
+                        </li>
+                        {/*<li className="nav-item">
+                            <Link className="nav-link" to="/map">Display Google Map</Link>
+                        </li>*/}
+                        
+                        
                     </ul>
                 </div>
             </nav>

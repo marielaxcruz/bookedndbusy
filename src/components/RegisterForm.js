@@ -2,9 +2,11 @@ import React from 'react';
 import UploadNewProfilePhoto from './ProfilePic';
 
 // I will make a form that will hold the user's information 
+
+
 const RegisterForm = () => {
     return(
-        <div>
+        <div class="container">
                 <h1 class="display-6">Start Your Adventure Book</h1>
             <form>
                 <div className='form'>
@@ -21,7 +23,6 @@ const RegisterForm = () => {
                 <button
                 type='submit'
                 className='btn btn-primary'
-                //onClick={handleUpload}
                 >
                     register
                 </button>

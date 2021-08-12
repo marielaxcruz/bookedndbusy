@@ -5,9 +5,13 @@ import SideBar from "./SideBar";
 const NewJournal = () => {
     return (
         <div  class="container">
+            <div className="row">
+            <div className ="col-md-2">
             <SideBar />
-        <h1 class="display-6">Add a Journal Entry</h1>
-        <form >
+            </div>
+            <div className ="col">
+            <h1 class="display-6">Add a Journal Entry</h1>
+            <form >
             <label>
             <p class="fst-italic" >Example Prompts: 
             <ul>
@@ -22,6 +26,9 @@ const NewJournal = () => {
             </label>
             <button class="btn btn-primary" type="submit">Next</button>
         </form>
+            </div>
+            </div>
+        
         </div>
 
     );

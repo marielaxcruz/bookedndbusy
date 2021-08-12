@@ -5,7 +5,7 @@ import './header.css';
 
 
 
-const Header = () => {
+const LoggedOutHeader = () => {
     return (
         <header>
             
@@ -40,4 +40,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default LoggedOutHeader;

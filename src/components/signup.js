@@ -10,14 +10,14 @@ const SignUp = ({ history }) => {
       await firebaseConfig
         .auth()
         .createUserWithEmailAndPassword(email.value, password.value);
-      history.push("/");
+      history.push("/accountsetup");
     } catch (error) {
       alert(error);
     }
   }, [history]);
-
+// const - sending form ann f 
   return (
-    <div>
+    <div class="container">
       <h1>Register</h1>
       <form onSubmit={handleSignUp}>
         <label>
@@ -32,10 +32,15 @@ const SignUp = ({ history }) => {
           Password Again
           <input name="password" type="password" placeholder="Password" />
         </label>*/}
-        <button class="btn btn-primary" type="submit">Register</button>
+        <button class="btn btn-primary" type="submit">register</button>
       </form>
     </div>
   );
 };
-
+//onClick={(event)=>{event.preventDefault(); history.push("/accountsetup")}
 export default withRouter(SignUp);
+
+
+
+// return db.collection('users').doc(cred.user.uid).set({
+          

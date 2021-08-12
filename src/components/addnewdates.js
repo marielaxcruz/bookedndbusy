@@ -8,8 +8,14 @@ import SideBar from "./SideBar";
 const NewDate = () => {
     return (
         <div class="container">
+            <div className="row">
+            <div className ="col-md-2">
             <SideBar />
-        <h1 class="display-6">Add a Date, the user will select one date</h1>
+            </div>
+            <div className ="col">
+            <h1 class="display-6">Add a Travel Date</h1>
+            </div>
+        </div>
         </div>
 
     );

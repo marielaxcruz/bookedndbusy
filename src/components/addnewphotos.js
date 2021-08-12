@@ -66,9 +66,13 @@ const UploadNewPhoto = ( { id,lat, lng } ) => {
     
     return(
         <div class="container">
-                <SideBar />
+            <div className="row">
+            <div className ="col-md-2">
+            <SideBar />
+                </div>
+                <div className ="col-md-2">
                 <h1 class="display-6">Add Photos</h1>
-            <form>
+                <form>
                 <div className='form'>
                     <input
                         type='file'
@@ -83,6 +87,10 @@ const UploadNewPhoto = ( { id,lat, lng } ) => {
                     Add Photo
                 </button>
             </form>
+                </div> 
+            </div>
+                
+           
         </div>
 )
 }
