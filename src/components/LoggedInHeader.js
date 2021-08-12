@@ -20,10 +20,11 @@ const LoggedInHeader = () => {
                             <Link className="nav-link" to="/">home</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/logout">logout</Link>
+                            <button className="nav-link" to="/logout">logout</button>
                         </li>
                     </ul>
                 </div>
+                <SignOut />
             </nav>
         </header>
     );

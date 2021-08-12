@@ -8,7 +8,7 @@ import Maps from "./googlemaps";
 // this component will redirect to the form for adding a new city and country to their map using google maps search 
 const NewCity = () => {
 return (
-    <div>
+    <div class="container">
         <SideBar />
         <Maps />
     <h1 class="display-6">Add A New Adventure</h1>

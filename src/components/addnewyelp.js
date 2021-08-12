@@ -17,7 +17,7 @@ export default function NewYelp(props){
     }
 
     return (
-        <div >
+        <div  class="container" >
         <h1 className="display-6">Adding A new Yelp location</h1>
         <form onSubmit={submit} >
             <label class="d-flex p-2 bd-highlight"> 

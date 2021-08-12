@@ -10,6 +10,10 @@
 
   ;
 }
+
+.happy{
+  background-color: #eef6fc;
+}
 body{
   display: flex;
   align-items: center;
@@ -21,21 +25,18 @@ body{
   margin-left: 20px;
 }
 .wrapper .static-txt{
-  color: black;
+  color:#FB8F67;
   font-size: 60px;
   font-weight: 400;
-  background-color: #FFC2B4;
 }
 .wrapper .dynamic-txts{
   /*margin-left: 0px;*/
   height: 90px;
   line-height: 90px;
   overflow: hidden;
-  background-color:#F8E16C;
 }
 .dynamic-txts li{
   list-style: none;
-  color: #2596be  ;
   font-size: 60px;
   font-weight: 500;
   position: relative;

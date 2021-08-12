@@ -38,6 +38,8 @@ class Users extends Component {
                     <th> {data.displayjournal}</th>
                     <th> {data.dates}</th>
                     <th> {data.Journal}</th>
+                    <th> {data.bio}</th>
+                    <th> {data.profile}</th>
                     {/*<th> {data.entry}</th>*/}
                 </tr>
 
@@ -50,7 +52,7 @@ class Users extends Component {
         //const users = this.state.users;
         console.log("rendering users")
         return(
-            <main>
+            <main  class="container">
                 <SideBar />
                 <link href="/css/main.min.css" rel="stylesheet"></link>
                 <table className="table table-dark">

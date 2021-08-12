@@ -1,10 +1,11 @@
-import React from "react";
+import React from 'react';
 import SideBar from "./SideBar";
 
 
-const NewJournal = () => {
+
+const NewDate = () => {
     return (
-        <div  class="container">
+        <div>
             <SideBar />
         <h1 class="display-6">Add a Journal Entry</h1>
         <form >
@@ -18,7 +19,7 @@ const NewJournal = () => {
             </ul>
             </p>
             <p>Reflect & write on your experience of the day.</p>
-            <textarea class="input-group input-group-lg" type="text" placeholder="Today was an adventurous day because ..."></textarea>
+            <input class="input-group input-group-lg" type="text" placeholder="Today was an adventurous day because ..."></input>
             </label>
             <button class="btn btn-primary" type="submit">Next</button>
         </form>
@@ -27,8 +28,5 @@ const NewJournal = () => {
     );
     }
     
-    //onSubmit={handleAddNew}
-
-    // class="form-control form-control-lg" type="text" 
     
-    export default NewJournal;
+    export default NewDate;

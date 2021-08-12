@@ -1,41 +1,14 @@
+// this will hold the user's:
+// profile pic that will get stored in firebase storage 
 
-
-
-
-//import React from "react";
-
-//const NewPhotos = () => {
-//    return (
-//        //<div>
-//        <div>
-//            <SideBar />
-//            <h1 class="display-6">Add Photos to your adventure in CITY NAME COUNTRY NAME</h1>
-//        <form>
-//        <div class="form-group">
-//        <label for="exampleFormControlFile1">Example file input</label>
-//        <input type="file" class="form-control-file" id="exampleFormControlFile1"/>
-//        </div>
-//        </form>
-//        {/*<button class="btn btn-primary" type="submit">Next</button>*/}
-//        </div>
-//    );
-//    }
-    
-//    //onSubmit={handleAddNew}
-
-    
-//    export default NewPhotos;
-
-// this component will redirect to the form for adding photos to their adventure  
 import React from 'react';
 // import React, { useState, useEffect } from 'react';
 import { storageRef , usersCollection} from '../firebase.js'
 // import { storage, storageRef , usersCollection} from '../firebase.js'
 //import { withRouter, Redirect } from "react-router";
-import SideBar from "./SideBar";
 
 // the props that are being passed down is the user id and the lat/lng of pin the user is currently adding photos to their adventure book 
-const UploadNewPhoto = ( { id,lat, lng } ) => {
+const UploadNewProfilePhoto = ( { id } ) => {
     
     const handleChange =  (event) => {
         event.preventDefault()
@@ -43,7 +16,7 @@ const UploadNewPhoto = ( { id,lat, lng } ) => {
         const image = event.target.files[0]
         // const image = await resizeFile(originalImage)
         
-        storageRef.child(`/user/images/${image.name}`)
+        storageRef.child(`/profilepics/${image.name}`)
         
         .put(image)
         .then(async(uploadSnapshot) => {
@@ -58,16 +31,15 @@ const UploadNewPhoto = ( { id,lat, lng } ) => {
             
             
             
-            console.log('this is the Uploaded image', image.name)
+            console.log('this is the Uploaded selfie', image.name)
         })
     
     }
     
     
     return(
-        <div class="container">
-                <SideBar />
-                <h1 class="display-6">Add Photos</h1>
+        <div>
+                <h1>Add a Profile Pic</h1>
             <form>
                 <div className='form'>
                     <input
@@ -80,11 +52,11 @@ const UploadNewPhoto = ( { id,lat, lng } ) => {
                 className='btn btn-primary'
                 //onClick={handleUpload}
                 >
-                    Add Photo
+                    Add Selfie
                 </button>
             </form>
         </div>
 )
 }
-export default UploadNewPhoto;
+export default UploadNewProfilePhoto;
 

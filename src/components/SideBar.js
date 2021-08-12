@@ -12,7 +12,7 @@ const SideBar = () => {
             
             <nav>
                 <div>
-                    <ul>
+                    <ul class="list-unstyled">
                         <li>
                             <Link className="nav-link" to="/users">User Info from Firestore</Link>
                         </li>
@@ -30,6 +30,9 @@ const SideBar = () => {
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/newjournal">Add Journal</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/newdate">Add New Date</Link>
                         </li>
                     </ul>
                 </div>
