@@ -12,7 +12,7 @@ const RegisterForm = () => {
                     <input
                         type='text' placeholder="First Name"
                     />
-                    <p>Bio</p>
+                    <p>Add your Bio</p>
                     <input
                         type='text' placeholder="My next adventure is .."
                     />
