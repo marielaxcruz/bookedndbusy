@@ -1,10 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 //import firebaseConfig from "../firebase.js";
 import Maps from "./googlemaps";
 import SignOut from './SignOut';
 import Users from './userinfo';
 import { useHistory } from "react-router";
-
+import { usersCollection } from '../firebase';
 //const nextPage=(event)=> {
 //    let history = useHistory();
 //    event.preventDefault(); history.push("/newjournal")
@@ -14,9 +14,20 @@ import { useHistory } from "react-router";
 const Home = () => {
     // hook - stands alone 
     let history = useHistory();
-
     const handleClick =() => {
-    history.push("/NewDate");
+    history.push("/newcity");
+    }
+    const [currentName, setName] = useState('')
+    function getUserInfo(event) {
+        event.preventDefault()
+        usersCollection
+        .doc('mari')
+        .get({
+            name: currentName,
+        })
+        .then((snapshot) => {
+          // display data
+        })
     
 }
     return (

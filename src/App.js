@@ -12,8 +12,9 @@ import NewCity from "./components/addnewcity";
 import NewYelp from "./components/addnewyelp";
 import UploadNewPhoto from "./components/addnewphotos";
 import NewJournal from "./components/addnewjournal";
-import NewDate from "./components/addnewdates"
+import NewDate from "./components/AddNewDate";
 import RegisterForm from "./components/RegisterForm";
+import ReviewPage from "./components/ReviewPage";
 //import LoggedInHeader from"./components/LoggedInHeader";
 
 
@@ -33,7 +34,7 @@ const App = () => {
         {/*<link href="/css/main.min.css" rel="stylesheet"></link>*/}
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"></link>
           <LoggedOutHeader />
-          <PrivateRoute exact path="/" component={Home} />
+          <PrivateRoute exact path="/home" component={Home} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/accountsetup" component={RegisterForm} />
           <Route exact path="/signup" component={SignUp} />
@@ -44,6 +45,7 @@ const App = () => {
           <PrivateRoute exact path="/newphoto" component={UploadNewPhoto} />
           <PrivateRoute exact path="/newjournal" component={NewJournal} />
           <PrivateRoute exact path="/newdate" component={NewDate} />
+          <PrivateRoute exact path="/review" component={ReviewPage} />
         </div>
       </Router>
     </AuthProvider>

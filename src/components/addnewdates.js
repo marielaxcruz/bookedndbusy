@@ -9,7 +9,7 @@ import { useHistory } from "react-router";
 const NewDate = () => {
     let history = useHistory();
     const handleClick =() => {
-        history.push("/NewCity");
+        history.push("/newphoto");
     }
     return (
         <div class="container">

@@ -1,32 +1,34 @@
 import React from 'react';
 import SideBar from "./SideBar";
+import './AddNewDate.css';
+import { useHistory } from "react-router";
 
+import {DateTimePickerComponent} from '@syncfusion/ej2-react-calendars';
+import { Container } from 'postcss';
 
 
 const NewDate = () => {
+    let history = useHistory();
+    const handleClick =() => {
+        history.push("/newcity");
+    };
     return (
-        <div>
+        <div class="container">
+            <div className="row">
+            <div className ="col-sm">
             <SideBar />
-        <h1 class="display-6">Add a Journal Entry</h1>
-        <form >
-            <label>
-            <p class="fst-italic" >Example Prompts: 
-            <ul>
-                <li>Write about the people that you have interacted with.</li>
-                <li>Write about the food.</li>
-                <li>What did you like/dislike most about today, and why?</li>
-                <li>What plan/adventure are you looking forward to on your trip?</li>
-            </ul>
-            </p>
-            <p>Reflect & write on your experience of the day.</p>
-            <input class="input-group input-group-lg" type="text" placeholder="Today was an adventurous day because ..."></input>
-            </label>
-            <button class="btn btn-secondary btn-lg btn-block" type="submit">Next</button>
-        </form>
-        </div>
+            </div>
+            <div className ="col-sm">
+    <DateTimePickerComponent placeholder="Choose a date"></DateTimePickerComponent>
+    </div>
+    </div>
+    <div className="row">
+    <button className ="color" onClick={handleClick} class="btn btn-secondary btn-lg btn-block" >next</button>
+    </div>
+    </div>
 
     );
     }
     
     
-    export default NewDate;
+export default NewDate;

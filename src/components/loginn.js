@@ -25,7 +25,7 @@ const Login = ({ history }) => {
     const { currentUser } = useContext(AuthContext);
     
     if (currentUser) {
-        return <Redirect to="/" />;
+        return <Redirect to="/home" />;
         
 }
 

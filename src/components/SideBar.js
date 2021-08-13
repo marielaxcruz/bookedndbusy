@@ -13,11 +13,11 @@ const SideBar = () => {
             <nav>
                 <div>
                     <ul class="list-unstyled">
-                    <li className="nav-item">
-                            <Link className="nav-link" to="/newdate">Add Travel Date</Link>
-                        </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/newcity">Add Location</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/newdate">Add Travel Date</Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/newphoto">Add Photos</Link>
@@ -30,6 +30,9 @@ const SideBar = () => {
                         </li>
                         <li>
                             <Link className="nav-link" to="/users">User Info from Firestore</Link>
+                        </li>
+                        <li>
+                            <Link className="nav-link" to="/review">Review Your Adventure</Link>
                         </li>
                         {/*<li className="nav-item">
                             <Link className="nav-link" to="/map">Display Google Map</Link>
