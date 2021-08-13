@@ -10,7 +10,7 @@ import { useHistory } from "react-router";
 const NewCity = () => {
     let history = useHistory();
     const handleClick =() => {
-        history.push("/newphoto");    
+        history.push("/newdate");    
     }
     //function setColor(color){}
 return (

@@ -10,7 +10,7 @@ import {DateTimePickerComponent} from '@syncfusion/ej2-react-calendars';
 const NewDate = () => {
     let history = useHistory();
     const handleClick =() => {
-        history.push("/newcity");
+        history.push("/newphoto");
     };
     return (
         <div class="container">

@@ -2,7 +2,7 @@
 import React, {Component} from 'react';
 import {firebaseLooper} from '../tools/firebaselooper';
 import { usersCollection } from '../firebase';
-import SideBar from './SideBar';
+//import SideBar from './SideBar';
 // when this components loads I want to go to the database and fetch the data 
 class Users extends Component {
     
@@ -53,7 +53,7 @@ class Users extends Component {
         console.log("rendering users")
         return(
             <main  class="container">
-                <SideBar />
+                {/*<SideBar />*/}
                 {/*<link href="/css/main.min.css" rel="stylesheet"></link>*/}
                 <table className="table table-dark">
                     <thread>
