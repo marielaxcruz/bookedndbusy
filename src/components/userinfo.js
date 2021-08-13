@@ -35,10 +35,10 @@ class Users extends Component {
                 <tr key ={i}>
                     <th> {data.id}</th>
                     <th> {data.name}</th>
-                    <th> {data.displayjournal}</th>
-                    <th> {data.dates}</th>
-                    <th> {data.Journal}</th>
                     <th> {data.bio}</th>
+                    {/*<th> {data.dates}</th>*/}
+                    {/*<th> {data.Journal}</th>*/}
+                    {/*<th> {data.bio}</th>*/}
                     <th> {data.profile}</th>
                     {/*<th> {data.entry}</th>*/}
                 </tr>
@@ -54,16 +54,16 @@ class Users extends Component {
         return(
             <main  class="container">
                 <SideBar />
-                <link href="/css/main.min.css" rel="stylesheet"></link>
+                {/*<link href="/css/main.min.css" rel="stylesheet"></link>*/}
                 <table className="table table-dark">
                     <thread>
                         <tr>
                             <th>ID</th>
                             {/*<th>Location</th>*/}
                             <th>Name</th>
-                            <th>Date</th>
-                            <th>Display Journal</th>
-                            <th>Entry Created</th>
+                            <th>Bio</th>
+                            {/*<th>Display Journal</th>
+                            <th>Entry Created</th>*/}
                         </tr>
                     </thread>
                     <tbody>
@@ -71,7 +71,6 @@ class Users extends Component {
                     </tbody>
 
                 </table>
-                <p class="text-warning"> I should be able to see all my user info </p>
             </main>
         )
     }

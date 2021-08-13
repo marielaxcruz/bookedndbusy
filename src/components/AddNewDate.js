@@ -21,7 +21,7 @@ const NewDate = () => {
             <p>Reflect & write on your experience of the day.</p>
             <input class="input-group input-group-lg" type="text" placeholder="Today was an adventurous day because ..."></input>
             </label>
-            <button class="btn btn-primary" type="submit">Next</button>
+            <button class="btn btn-secondary btn-lg btn-block" type="submit">Next</button>
         </form>
         </div>
 

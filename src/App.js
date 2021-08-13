@@ -20,21 +20,25 @@ import RegisterForm from "./components/RegisterForm";
 
 // wrapping our layer with auth provider so everything below it will have access to current user through the context api
 //function App() {
+
 const App = () => {
     //<div>
     //  {user === null ? <LoggedOutHeader /> : <LoggedInHeader/>}
     //</div>
   return (
+    
     <AuthProvider>
       <Router>
         <div>
+        {/*<link href="/css/main.min.css" rel="stylesheet"></link>*/}
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"></link>
           <LoggedOutHeader />
           <PrivateRoute exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/accountsetup" component={RegisterForm} />
           <Route exact path="/signup" component={SignUp} />
           <PrivateRoute  exact path="/users" component={Users} />
-          <Route exact path="/home" component={MainPage} />
+          <Route exact path="/bookedndbusy" component={MainPage} />
           <PrivateRoute exact path="/newcity" component={NewCity} />
           <PrivateRoute exact path="/newyelp" component={NewYelp} />
           <PrivateRoute exact path="/newphoto" component={UploadNewPhoto} />

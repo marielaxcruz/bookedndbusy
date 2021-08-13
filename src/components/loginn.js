@@ -3,7 +3,9 @@ import { withRouter, Redirect } from "react-router";
 import firebaseConfig from 'firebase';
 import { AuthContext } from "../auth.js";
 
+
 const Login = ({ history }) => {
+
     const handleLogin = useCallback(
         async event => {
             event.preventDefault();
@@ -24,6 +26,7 @@ const Login = ({ history }) => {
     
     if (currentUser) {
         return <Redirect to="/" />;
+        
 }
 
     return (

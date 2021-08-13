@@ -3,3 +3,17 @@
 <SideBar />
 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Add a new Adventure</button>
 <button class="btn btn-primary" onClick={() => firebaseConfig.auth().signOut()}>Sign out</button>*/
+
+  //const [loggedIn, setLoggedIn]  = useState(false);
+
+  //  useEffect(() => {
+        
+  //      firebase.auth().onAuthStateChanged( (user) => {
+  //          if (user) {
+  //              setLoggedIn(true)
+  //          }else{
+  //              setLoggedIn(false)
+  //          }})
+  //      }, []);
+  //  console.log(`************* ${loggedIn} ************`)
+  //  const isLoggedIn = loggedIn ? ' are ': ' are not '

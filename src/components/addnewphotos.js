@@ -1,7 +1,3 @@
-
-
-
-
 //import React from "react";
 
 //const NewPhotos = () => {
@@ -25,7 +21,6 @@
 
     
 //    export default NewPhotos;
-
 // this component will redirect to the form for adding photos to their adventure  
 import React from 'react';
 // import React, { useState, useEffect } from 'react';
@@ -33,10 +28,14 @@ import { storageRef , usersCollection} from '../firebase.js'
 // import { storage, storageRef , usersCollection} from '../firebase.js'
 //import { withRouter, Redirect } from "react-router";
 import SideBar from "./SideBar";
+import { useHistory } from "react-router";
 
 // the props that are being passed down is the user id and the lat/lng of pin the user is currently adding photos to their adventure book 
 const UploadNewPhoto = ( { id,lat, lng } ) => {
-    
+        let history = useHistory();
+        const handleClick =() => {
+            history.push("/newjournal");
+        }
     const handleChange =  (event) => {
         event.preventDefault()
         
@@ -60,11 +59,11 @@ const UploadNewPhoto = ( { id,lat, lng } ) => {
             
             console.log('this is the Uploaded image', image.name)
         })
-    
     }
     
     
     return(
+        
         <div class="container">
             <div className="row">
             <div className ="col-md-2">
@@ -87,10 +86,11 @@ const UploadNewPhoto = ( { id,lat, lng } ) => {
                     Add Photo
                 </button>
             </form>
+            <div className="row">
+            <button onClick={handleClick}  className="btn btn-secondary btn-lg btn-block" type="submit">Next</button>
+            </div>
                 </div> 
             </div>
-                
-           
         </div>
 )
 }
