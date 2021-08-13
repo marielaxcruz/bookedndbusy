@@ -1,7 +1,8 @@
 // this page will show the all the memories they have put together. 
 // add to adventures to adventure book will be a button that will take you back to the user's home page 
 import { useHistory } from "react-router";
-import React, { useState } from "react";
+import React from "react";
+//import React, { useState } from "react";
 
 const ReviewPage = () => {
     let history = useHistory();

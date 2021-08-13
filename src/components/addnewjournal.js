@@ -3,7 +3,7 @@ import SideBar from "./SideBar";
 import { useHistory } from "react-router";
 import './AddNewJournal.css';
 import { usersCollection } from '../firebase';
-import NewDate from "./AddNewDate";
+//import NewDate from "./AddNewDate";
 
 const NewJournal = () => {
     // state callback function when submit save state into firebase/put 
