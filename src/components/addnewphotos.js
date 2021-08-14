@@ -24,7 +24,7 @@
 // this component will redirect to the form for adding photos to their adventure  
 import React from 'react';
 // import React, { useState, useEffect } from 'react';
-import { storageRef , usersCollection} from '../firebase.js'
+import { storageRef , usersCollection} from '../tools/firebase.js'
 // import { storage, storageRef , usersCollection} from '../firebase.js'
 //import { withRouter, Redirect } from "react-router";
 import SideBar from "./SideBar";

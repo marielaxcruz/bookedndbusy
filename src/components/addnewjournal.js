@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import SideBar from "./SideBar";
 import { useHistory } from "react-router";
 import './AddNewJournal.css';
-import { usersCollection } from '../firebase';
+import { usersCollection } from '../tools/firebase';
 //import NewDate from "./AddNewDate";
 
 const NewJournal = () => {

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import firebaseConfig from "./firebase";
+import firebaseConfig from "./tools/firebase";
 
 // react context api: store our auth status - if we are logged in or not and let our state know who is logged in
 // create context allows you to propagate data through the whole react component tree 

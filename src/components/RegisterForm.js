@@ -1,5 +1,6 @@
 import React from 'react';
 import UploadNewProfilePhoto from './ProfilePic';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 // I will make a form that will hold the user's information 
 
@@ -23,6 +24,7 @@ const RegisterForm = () => {
                 <button
                 type='submit'
                 className='btn btn-primary'
+                style ={{color: 'FF69B4'}}
                 >
                     register
                 </button>

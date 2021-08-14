@@ -25,12 +25,12 @@ const SideBar = () => {
                         <li className="nav-item">
                             <Link className="nav-link" to="/newjournal">Add Journal</Link>
                         </li>
-                        <li className="nav-item">
+                        {/*<li className="nav-item">
                             <Link className="nav-link" to="/newyelp">Add a Yelp Place</Link>
-                        </li>
-                        <li>
+                        </li>*/}
+                        {/*<li>
                             <Link className="nav-link" to="/users">User Info from Firestore</Link>
-                        </li>
+                        </li>*/}
                         <li>
                             <Link className="nav-link" to="/review">Review Your Adventure</Link>
                         </li>

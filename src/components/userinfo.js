@@ -1,7 +1,7 @@
 // info on using brackets, when you wrap into brackets it means you are exporting something ad not doing an exporting defualt, if you want to import a default you dont need the brackets 
 import React, {Component} from 'react';
 import {firebaseLooper} from '../tools/firebaselooper';
-import { usersCollection } from '../firebase';
+import { usersCollection } from '../tools/firebase';
 //import SideBar from './SideBar';
 // when this components loads I want to go to the database and fetch the data 
 class Users extends Component {

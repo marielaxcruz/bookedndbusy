@@ -1,5 +1,5 @@
 import React from "react";
-import firebaseConfig from "../firebase.js";
+import firebaseConfig from "../tools/firebase.js";
 
 
 const SignOut = () => {
