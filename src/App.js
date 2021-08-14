@@ -33,7 +33,9 @@ import firebase from "./tools/firebase";
   
 //  }
 
- //this detects a change in user status login logout etc. everytime a user is logged in you get the email and id of user. we get a user object back 
+ //app will listen for a change in logged in or out this detects a change in user status
+ // console will show the email and id 
+ //get a user object back from this
 const App = () => {
     firebase.auth().onAuthStateChanged( user => {
       if (user) {
