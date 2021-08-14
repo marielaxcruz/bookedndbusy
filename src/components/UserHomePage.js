@@ -6,34 +6,22 @@ import SignOut from './SignOut';
 import Users from './userinfo';
 import { useHistory } from "react-router";
 import { usersCollection } from '../tools/firebase';
-//const nextPage=(event)=> {
-//    let history = useHistory();
-//    event.preventDefault(); history.push("/newjournal")
-//}
+import { AuthContext } from './AuthConnect';
+import {useContext} from "react";
+
 // pass as a prop user data 
 // save user data as state 
+// or usecontext 
 
-// or conext 
-
-const Home = ({uid}) => {
+const Home = () => {
     // hook - stands alone 
     let history = useHistory();
     const handleClick =() => {
     history.push("/newcity");
     }
-    const [currentName, setName] = useState('')
-    function getUserInfo(event) {
-        event.preventDefault()
-        usersCollection
-        .doc('mari')
-        .get({
-            name: currentName,
-        })
-        .then((snapshot) => {
-          // display data
-        })
-    
-}
+
+    const {currentUser, userDetails} = useContext(AuthContext);
+
     return (
     <div className="container-md">
         <div className="row gx-5">
@@ -41,8 +29,8 @@ const Home = ({uid}) => {
             <img src = " https://via.placeholder.com/150" alt="user pic"/>
             </div>
             <div className ="col">
-            <h1 class="display-6">Welcome</h1>
-            <p class="fst-italic">I love good food and swimming</p>
+            <h1 class="display-6">Welcome {userDetails.name}!</h1>
+            <p class="fst-italic">{userDetails.bio}</p>
             </div>
             <div className="col">
                 <button onClick={handleClick} class="btn btn-outline-success my-2 my-sm-0" type="submit">
@@ -54,7 +42,6 @@ const Home = ({uid}) => {
                     <SignOut />
                     </div>
             <div className="row">
-            <Users />
             <div/>
             <div className="row">
             <Maps />

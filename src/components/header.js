@@ -26,7 +26,7 @@ const LoggedOutHeader = () => {
                 <div className="collapse navbar-collapse" id="navbarCollapse">
                     <ul className="navbar-nav mr-auto">
                         <li >
-                            <Link className="nav-link" to="/home">temp user's Home</Link>
+                            <Link className="nav-link" to="/">temp user's Home</Link>
                         </li>
                         </ul>
     <button onClick={handleClick} class="btn btn-outline-success" type="button">login</button>

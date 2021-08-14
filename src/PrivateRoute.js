@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Route, Redirect } from "react-router-dom";
-import { AuthContext } from  "./auth";
+import { AuthContext } from  "./components/AuthConnect";
 // we have access to the current user - are they login in or home
 // we need to know what component to render 
 // a private route that only authenticated user can access to.

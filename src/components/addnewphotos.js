@@ -31,7 +31,7 @@ import SideBar from "./SideBar";
 import { useHistory } from "react-router";
 
 // the props that are being passed down is the user id and the lat/lng of pin the user is currently adding photos to their adventure book 
-const UploadNewPhoto = ( { id,lat, lng } ) => {
+const UploadNewPhoto = ( { id,lat,lng } ) => {
     let history = useHistory();
     const handleClick =() => {
         history.push("/newjournal");
@@ -46,7 +46,7 @@ const UploadNewPhoto = ( { id,lat, lng } ) => {
         
         .put(image)
         .then(async(uploadSnapshot) => {
-            // uploadSnapshot.ref.getDownloadURL expression gets resolved into a promise. we have to use await to unwrap the promise 
+            // uploadSnapshot.ref.getDownloadURL then changes into a promise. await then takes in the promise 
             const downloadURL = await uploadSnapshot.ref.getDownloadURL()
 
             usersCollection

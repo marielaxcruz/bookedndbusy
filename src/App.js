@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { AuthProvider } from "./auth";
+import { AuthProvider } from "./components/AuthConnect";
 import Home from './components/UserHomePage'
 import PrivateRoute from "./PrivateRoute";
 import SignUp from "./components/signup";
@@ -39,7 +39,7 @@ import firebase from "./tools/firebase";
 const App = () => {
     firebase.auth().onAuthStateChanged( user => {
       if (user) {
-        //console.log(user.email)
+        console.log(user.email)
         const email = user.email;
         console.log(user.uid)
         //const displayName = user.displayName;

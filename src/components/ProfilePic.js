@@ -23,10 +23,11 @@ const UploadNewProfilePhoto = ( { id } ) => {
             // uploadSnapshot.ref.getDownloadURL expression gets resolved into a promise. we have to use await to unwrap the promise 
             const downloadURL = await uploadSnapshot.ref.getDownloadURL()
 
-            usersCollection.doc(id).update({
+            usersCollection
+            .doc(id)
+            .update({
             
-                photo_URL : downloadURL,
-                dateUploaded : image.lastModifiedDate
+                profilepic : downloadURL
             })
             
             
