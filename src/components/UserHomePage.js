@@ -8,6 +8,7 @@ import { useHistory } from "react-router";
 import { usersCollection } from '../tools/firebase';
 import { AuthContext } from './AuthConnect';
 import {useContext} from "react";
+import { Redirect } from "react-router-dom";
 
 // pass as a prop user data 
 // save user data as state 
@@ -19,8 +20,12 @@ const Home = () => {
     const handleClick =() => {
     history.push("/newcity");
     }
-
+    // carrying the user info over 
     const {currentUser, userDetails} = useContext(AuthContext);
+
+    if (!currentUser) {
+        return <Redirect to="/login" />;
+    }
 
     return (
     <div className="container-md">

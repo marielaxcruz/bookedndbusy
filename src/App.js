@@ -13,7 +13,6 @@ import NewYelp from "./components/addnewyelp";
 import UploadNewPhoto from "./components/addnewphotos";
 import NewJournal from "./components/addnewjournal";
 import NewDate from "./components/AddNewDate";
-import RegisterForm from "./components/RegisterForm";
 import ReviewPage from "./components/ReviewPage";
 import LoggedInHeader from"./components/LoggedInHeader";
 //import firebaseConfig from "../firebase.js";
@@ -60,7 +59,6 @@ const App = () => {
           <LoggedOutHeader />
           <PrivateRoute exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
-          <Route exact path="/accountsetup" component={RegisterForm} />
           <Route exact path="/signup" component={SignUp} />
           <PrivateRoute  exact path="/users" component={Users} />
           <Route exact path="/bookedndbusy" component={MainPage} />

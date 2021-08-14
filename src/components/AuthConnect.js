@@ -35,3 +35,4 @@ export const AuthProvider = ({ children }) => {
         </AuthContext.Provider>
     );
 };
+// once they logged in/register so current user is updated 
