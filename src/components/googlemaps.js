@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useContext } from "react";
 import {
     GoogleMap,
     useLoadScript,
@@ -28,6 +28,8 @@ import {
 import mapstyles from './mapstyles';
 //import { map } from 'core-js/core/array';
 // new variable to avoid too many rerenders 
+import { AuthContext } from "./AuthConnect";
+
 const libraries = ["places"]
 const mapContainerStyle = {
     width: '50vw',
@@ -43,7 +45,11 @@ const options ={
     zoomControl:true
 }
 
-export default function Maps(){
+const Maps= ()=> {
+    const {currentUser, userDetails} = useContext(AuthContext);
+       // state that holds the pins objects
+    const [pinsData, setpinsData]  = useState([]);
+
     const {isLoaded, loadError} = useLoadScript({
         googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
         libraries,
@@ -105,14 +111,16 @@ export default function Maps(){
             // we can add a unique icon as well, something for later
             ))}
             {selected ? (
-            <InfoWindow position ={{lat:selected.lat, lng: selected.lng}}
+            <InfoWindow 
+            position ={{lat:selected.lat, lng: selected.lng}}
             onCloseClick={()=> {
-                setSelected(null);
+            setSelected(null);
             }}
             >
                 <div>
-                    <h2>New Adventure</h2>
+                    <h2>Adventure to CITY NAME</h2>
                     <p>Added {formatRelative(selected.time, new Date())}</p>
+                    <button>view this adventure</button>
                 </div>
             </InfoWindow>
             ) : null}
@@ -143,15 +151,17 @@ function Search({panTo}){
             const results = await getGeocode({address});
             const {lat, lng} = await getLatLng(results[0]);
             panTo({lat,lng});
-            //console.log(lat, lng);
+            console.log(lat, lng);
         }catch(error){
             console.log("error!")
         }
         //console.log(address);
     }}
     >
-        <ComboboxInput value={value} onChange={(event)=> {
-            setValue(event.target.value);
+        <ComboboxInput 
+        value={value} 
+        onChange={(event)=> {
+        setValue(event.target.value);
         }} 
         disabled={!ready}
         placeholder="Enter a destination"
@@ -160,7 +170,9 @@ function Search({panTo}){
             <ComboboxList>
             {status === "OK" && 
                 data.map(({id, description}) => (
-                <ComboboxOption key={id} value={description} />
+                <ComboboxOption 
+                key={id} 
+                value={description} />
                 ))}
                 </ComboboxList>
         </ComboboxPopover>
@@ -171,3 +183,5 @@ function Search({panTo}){
     
 
 }
+
+export default Maps;

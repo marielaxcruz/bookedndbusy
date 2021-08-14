@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import SideBar from "./SideBar";
 import { useHistory } from "react-router";
 import './AddNewJournal.css';
 import { usersCollection } from '../tools/firebase';
+import { AuthContext } from "./AuthConnect";
 //import NewDate from "./AddNewDate";
 
 const NewJournal = () => {
@@ -14,12 +15,14 @@ const NewJournal = () => {
     const handleReview =() => {
         history.push("/review");
     };
+    const {currentUser, userDetails} = useContext(AuthContext);
     // set the state before you begin 
     const [journalNote, setJournalNote] = useState('')
+    
     function addJournal(event) {
         event.preventDefault()
         usersCollection
-        .doc('mari')
+        .doc(currentUser.uid)
         .collection('locations')
         .doc('location_1')
         .collection('dates')
@@ -28,7 +31,7 @@ const NewJournal = () => {
             journalentry: journalNote,
         })
         .then(() => {
-            // function being called 
+            // function being called to change the state of journal 
             setJournalNote('')
         })
     }

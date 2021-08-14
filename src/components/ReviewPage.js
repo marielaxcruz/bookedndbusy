@@ -7,7 +7,7 @@ import React from "react";
 const ReviewPage = () => {
     let history = useHistory();
     const handleClick =() => {
-        history.push("/home");
+        history.push("/");
     }
     return (
         <div class="container">

@@ -26,7 +26,7 @@ const Home = () => {
     <div className="container-md">
         <div className="row gx-5">
             <div className ="col-md-2">
-            <img src = " https://via.placeholder.com/150" alt="user pic"/>
+            <img src = " {https://via.placeholder.com/150}" alt="user pic"/>
             </div>
             <div className ="col">
             <h1 class="display-6">Welcome {userDetails.name}!</h1>

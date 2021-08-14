@@ -8,7 +8,7 @@ import { storageRef , usersCollection} from '../tools/firebase.js'
 //import { withRouter, Redirect } from "react-router";
 
 // the props that are being passed down is the user id and the lat/lng of pin the user is currently adding photos to their adventure book 
-const UploadNewProfilePhoto = ( { id } ) => {
+const UploadNewProfilePhoto = ( { uid } ) => {
     
     const handleChange =  (event) => {
         event.preventDefault()
@@ -24,7 +24,7 @@ const UploadNewProfilePhoto = ( { id } ) => {
             const downloadURL = await uploadSnapshot.ref.getDownloadURL()
 
             usersCollection
-            .doc(id)
+            .doc(uid)
             .update({
             
                 profilepic : downloadURL
