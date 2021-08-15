@@ -1,10 +1,14 @@
-import React from "react";
+import React, {useContext, useState} from "react";
 import SideBar from "./SideBar";
 import Maps from "./googlemaps";
 import { useHistory } from "react-router";
+import { usersCollection } from '../tools/firebase';
+import { AuthContext } from "./AuthConnect";
 // import React, { useCallback, useContext } from "react";
 ////import { withRouter, Redirect } from "react-router";
 //import firebaseConfig from 'firebase';
+// I have a location collection per user i, and each time I receive the marker click you would call the firestore sdk to add this data like in the add data section here, and during your app initialization use the read data to serialize your geopoints (the supported data type for geolocation in firebase) and put then in the map as markers.
+
 
 // this component will redirect to the form for adding a new city and country to their map using google maps search 
 const NewCity = () => {
@@ -12,7 +16,24 @@ const NewCity = () => {
     const handleClick =() => {
         history.push("/newdate");    
     }
-    //function setColor(color){}
+    const {currentUser, userDetails} = useContext(AuthContext);
+    // map state 
+    const [marker, setMarker] = useState('')
+    
+    function addMarker(event) {
+        event.preventDefault()
+        usersCollection
+        .doc(currentUser.uid)
+        .collection('locations')
+        .doc('')
+        .set({
+            newcity: marker,
+        })
+        .then(() => {
+            // function being called to change the state of journal 
+            setMarker('')
+        })
+    }
 return (
     <div class="container">
         <div className ="row">
@@ -21,16 +42,6 @@ return (
             </div>
             <div className ="col">
             <h1 class="display-6">Add A New Adventure</h1>
-    {/*<form >
-        <label>
-        City 
-        <input name="city" placeholder="City Name" />
-        </label>
-        <label>
-        Country
-        <input name="country" placeholder="Country" />
-        </label>*/}
-    {/*</form>*/}
             <Maps />
             </div>
         </div>

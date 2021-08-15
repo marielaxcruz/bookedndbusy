@@ -6,17 +6,17 @@ import PrivateRoute from "./PrivateRoute";
 import SignUp from "./components/signup";
 import Login from "./components/loginn";
 import LoggedOutHeader from "./components/header";
-import Users from './components/userinfo';
 import MainPage from "./components/mainpage";
 import NewCity from "./components/addnewcity";
 import NewYelp from "./components/addnewyelp";
-import UploadNewPhoto from "./components/addnewphotos";
-import NewJournal from "./components/addnewjournal";
+import UploadNewPhoto from "./components/AddNewPhotos";
+import NewJournal from "./components/AddNewJournal";
 import NewDate from "./components/AddNewDate";
 import ReviewPage from "./components/ReviewPage";
 import LoggedInHeader from"./components/LoggedInHeader";
 //import firebaseConfig from "../firebase.js";
 import firebase from "./tools/firebase";
+import AllAdventures from './components/ViewAllAdventures';
 
 
 // wrapping our layer with auth provider so everything below it will have access to current user through the context api
@@ -60,7 +60,6 @@ const App = () => {
           <PrivateRoute exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={SignUp} />
-          <PrivateRoute  exact path="/users" component={Users} />
           <Route exact path="/bookedndbusy" component={MainPage} />
           <PrivateRoute exact path="/newcity" component={NewCity} />
           <PrivateRoute exact path="/newyelp" component={NewYelp} />
@@ -68,6 +67,7 @@ const App = () => {
           <PrivateRoute exact path="/newjournal" component={NewJournal} />
           <PrivateRoute exact path="/newdate" component={NewDate} />
           <PrivateRoute exact path="/review" component={ReviewPage} />
+          <PrivateRoute exact path="/alladventures" component={AllAdventures} />
         </div>
       </Router>
     </AuthProvider>

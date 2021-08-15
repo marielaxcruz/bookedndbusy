@@ -1,25 +1,29 @@
-import React from 'react';
+import React, {useState} from 'react';
 import SideBar from "./SideBar";
 import './AddNewDate.css';
 import { useHistory } from "react-router";
+import DatePicker from 'react-date-picker'
 
-import {DateTimePickerComponent} from '@syncfusion/ej2-react-calendars';
-//import { Container } from 'postcss';
-
+// Use by adding <DatePicker />. Use onChange prop for getting new values
 
 const NewDate = () => {
     let history = useHistory();
     const handleClick =() => {
         history.push("/newphoto");
     };
+    const [value, onChange] = useState(new Date());
     return (
         <div class="container">
             <div className="row">
-            <div className ="col-sm">
+            <div className ="col">
             <SideBar />
             </div>
-            <div className ="col-sm">
-    <DateTimePickerComponent placeholder="Choose a date"></DateTimePickerComponent>
+            <div className ="col">
+                <h1>Add your First Travel Date</h1>
+            <DatePicker
+        onChange={onChange}
+        value={value}
+    />
     </div>
     </div>
     <div className="row">

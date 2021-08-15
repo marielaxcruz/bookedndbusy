@@ -29,6 +29,7 @@ import mapstyles from './mapstyles';
 //import { map } from 'core-js/core/array';
 // new variable to avoid too many rerenders 
 import { AuthContext } from "./AuthConnect";
+import { usersCollection } from '../tools/firebase';
 
 const libraries = ["places"]
 const mapContainerStyle = {
@@ -46,7 +47,7 @@ const options ={
 }
 
 const Maps= ()=> {
-    const {currentUser, userDetails} = useContext(AuthContext);
+    
        // state that holds the pins objects
     const [pinsData, setpinsData]  = useState([]);
 
@@ -60,6 +61,25 @@ const Maps= ()=> {
     // new state for what is the current info for the marker selected - pop up window
     // the state will get its valued once it is clicked on by the user 
     const [selected, setSelected] = React.useState(null);
+    // access to the current user logged in 
+    const {currentUser, userDetails} = useContext(AuthContext);
+    // function to start a add a new location/document to the database 
+    function addMarker(event) {
+        event.preventDefault()
+        usersCollection
+        .doc(currentUser.uid)
+        .collection('locations')
+        .add({
+            newcity: markers,
+        })
+        .then(() => {
+            // function being called to change the state of selected 
+            setSelected('')
+        })
+    }
+
+
+
 
     // usecallback allows you to create a function that will always retain the same value unless the event has changed
     const onMapClick = React.useCallback((event) => {
@@ -88,7 +108,7 @@ const Maps= ()=> {
     if (!isLoaded) return  "Loading Maps";
 
     return (
-    <div>
+    <div onClick={addMarker}>
         <Search panTo ={panTo} />
         <GoogleMap 
         mapContainerStyle={mapContainerStyle} 
@@ -101,7 +121,8 @@ const Maps= ()=> {
         >
             <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyDif6oRl4k8ZlmtDyZrKW6O64KM8Ib7Ob"></script>
             {markers.map((marker) => (
-            <Marker key={marker.time.toISOString()} 
+            <Marker 
+            key={marker.time.toISOString()} 
             position ={{lat:marker.lat, lng: marker.lng}}
             onClick = {() => {
                 setSelected(marker);
@@ -164,7 +185,7 @@ function Search({panTo}){
         setValue(event.target.value);
         }} 
         disabled={!ready}
-        placeholder="Enter a destination"
+        placeholder="Find Your Adventure"
         />
         <ComboboxPopover>
             <ComboboxList>

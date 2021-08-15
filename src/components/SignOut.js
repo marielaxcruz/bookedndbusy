@@ -5,7 +5,7 @@ import firebaseConfig from "../tools/firebase.js";
 const SignOut = () => {
     return (
     <div>
-        <button class="btn btn-primary" onClick={() => firebaseConfig.auth().signOut()}>
+        <button class="myButtonB" onClick={() => firebaseConfig.auth().signOut()}>
             Sign Out
         </button>
     </div>

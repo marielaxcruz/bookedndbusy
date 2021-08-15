@@ -3,3 +3,23 @@
     width: 100%
 }
 
+
+.myButton {
+	background-color: #FB8F67;
+	border-radius:10px;
+	border:2px solid #f8e16c;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Trebuchet MS;
+	font-size:20px;
+	padding:7px 24px;
+	text-decoration:none;
+}
+.myButton:hover {
+	background-color:#f8e16c;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}

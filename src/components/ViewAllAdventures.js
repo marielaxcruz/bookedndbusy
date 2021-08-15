@@ -4,7 +4,7 @@ import {firebaseLooper} from '../tools/firebaselooper';
 import { usersCollection } from '../tools/firebase';
 //import SideBar from './SideBar';
 // when this components loads I want to go to the database and fetch the data 
-class Users extends Component {
+class AllAdventures extends Component {
     
     state = {
         users: null
@@ -76,4 +76,4 @@ class Users extends Component {
     }
 }
 
-export default Users;
+export default AllAdventures;

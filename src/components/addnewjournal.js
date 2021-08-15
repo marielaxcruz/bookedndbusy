@@ -20,11 +20,12 @@ const NewJournal = () => {
     const [journalNote, setJournalNote] = useState('')
     
     function addJournal(event) {
+        // prevents the browser from refreshing 
         event.preventDefault()
         usersCollection
         .doc(currentUser.uid)
         .collection('locations')
-        .doc('location_1')
+        .doc('VBfRdZZVgSEOoNkythmW')
         .collection('dates')
         .doc("day_1")
         .set({
@@ -64,7 +65,7 @@ const NewJournal = () => {
                                     value={journalNote}
                                     onChange={event => setJournalNote(event.currentTarget.value)}
                             />
-                            <button type="submit" className="btn btn-primary">Add Journal</button>
+                            <button type="submit" class="myButton">Add Journal</button>
                             </form>
                             </div>
                             

@@ -3,6 +3,7 @@ import { withRouter } from "react-router";
 import firebaseConfig from "../tools/firebase";
 import { AuthContext } from "./AuthConnect";
 import { usersCollection} from '../tools/firebase.js'
+import ProfilePic from './ProfilePic';
 
 const SignUp = ({ history }) => {
 
@@ -48,10 +49,9 @@ const SignUp = ({ history }) => {
 
   return (
       <div class="container">
-        <div className ="col">
         <div className="row">
+        <div className ="col">
           <h1>Register</h1>
-          </div>
           </div>
           <form onSubmit={handleSignUp}>
           <div className="row">
@@ -59,11 +59,9 @@ const SignUp = ({ history }) => {
               Email:
               </label>
               <input 
-                  name="email" 
-                  type="email" 
                   placeholder="email" />
         </div>
-        <div className="row">
+        <div className ="col">
           <label>
               Password:
               <input 
@@ -78,20 +76,26 @@ const SignUp = ({ history }) => {
               <input 
                   name="userName" 
                   type="text" 
-                  placeholder="Name" />
+                  placeholder="name" />
           </label>
           </div> 
+          <div className ="col"> 
           <label>
-              Bio:
+            Bio:
               <input 
                   name="userBio" 
                   type="text" 
-                  placeholder="bio" />
+                  placeholder="if I could teleport anywhere it would be ..." />
           </label>
-          
-
-          <button class="btn btn-primary"  type="submit">register</button>
+          </div>
+          <div className="row">
+          <label>
+              <ProfilePic />
+          </label>
+</div>
+          <button class="myButtonB"  type="submit">register</button>
           </form>
+      </div>
       </div>
   );
 };

@@ -8,10 +8,4 @@ export const firebaseLooper = (snapshot) =>{
         })
     });
     return data;
-    //[
-    //    {
-
-    //    },
-    //    {}
-    //]
 };

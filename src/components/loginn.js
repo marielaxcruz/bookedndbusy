@@ -30,21 +30,26 @@ const Login = ({ history }) => {
 }
 
     return (
-        <div  class="container">
-        <h1>Log in</h1>
-        <form onSubmit={handleLogin}>
-            <label>
-            Email
-            <input name="email" type="email" placeholder="Email" />
-            </label>
-            <label>
-            Password
-            <input name="password" type="password" placeholder="Password" />
-            </label>
-            <button class="btn btn-primary" type="submit">Log in</button>
-        </form>
-        </div>
+        <div className="container-md">
+                    <h1>Log in</h1>    
+                    <form onSubmit={handleLogin}>
+                        <label>
+                            Email
+                            <input name="email" type="email" placeholder="Email" />
+                            </label>              
+                        <label>
+                            Password
+                    <input name="password" type="password" placeholder="Password" />
+                        </label>
+                    <button href="#" class="myButtonB" type="submit">log in</button>
+            
+            </form>    
+            </div>
+        
     );
 };
 
 export default withRouter(Login);
+
+
+

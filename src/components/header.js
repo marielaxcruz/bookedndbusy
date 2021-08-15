@@ -29,8 +29,8 @@ const LoggedOutHeader = () => {
                             <Link className="nav-link" to="/">temp user's Home</Link>
                         </li>
                         </ul>
-    <button onClick={handleClick} class="btn btn-outline-success" type="button">login</button>
-    <button onClick={handleClicks}class="btn btn-outline-success" type="button">register</button>
+    <button onClick={handleClick} class="myButtonB" type="button">login</button>
+    <button onClick={handleClicks}class="myButtonB" type="button">register</button>
                 
                 </div>
             </nav>

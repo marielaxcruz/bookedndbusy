@@ -40,8 +40,8 @@ const UploadNewProfilePhoto = ( { uid } ) => {
     
     return(
         <div>
-                <h1>Add a Profile Pic</h1>
             <form>
+            <label>Add a Profile Pic</label>
                 <div className='form'>
                     <input
                         type='file'
@@ -50,7 +50,7 @@ const UploadNewProfilePhoto = ( { uid } ) => {
                 </div>
                 <button
                 type='submit'
-                className='btn btn-primary'
+                className='myButtonBB'
                 //onClick={handleUpload}
                 >
                     Add Selfie

@@ -1,3 +1,71 @@
-*{
-    background-color: pink;
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Special Elite', cursive;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.myButton {
+	background-color: #FB8F67;
+	border-radius:10px;
+	border:2px solid #FB8F67;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Trebuchet MS;
+	font-size:18px;
+	padding:7px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+.myButton:hover {
+	background-color:#2596BE;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+
+.myButtonB {
+	background-color: #2596BE;
+	border-radius:10px;
+	border:2px solid #2596BE;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Trebuchet MS;
+	font-size:15px;
+	padding:7px 18px;
+	text-decoration:none;
+}
+.myButtonB:hover {
+	background-color:#FB8F67;
+}
+.myButtonB:active {
+	position:relative;
+	top:1px;
+}
+
+
+.myButtonBB {
+	background-color: #FB8F67;
+	border-radius:10px;
+	border:2px solid #FB8F67;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Trebuchet MS;
+	font-size:15px;
+	padding:7px 18px;
+	text-decoration:none;
+}
+.myButtonBB:hover {
+	background-color:#FB8F67;
+}
+.myButtonBB:active {
+	position:relative;
+	top:1px;
 }
