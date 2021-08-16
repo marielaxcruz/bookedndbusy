@@ -33,13 +33,17 @@ const Login = ({ history }) => {
         <div className="container-md">
                     <h1>Log in</h1>    
                     <form onSubmit={handleLogin}>
-                        <label>
+                        <label class="container">
                             Email
-                            <input name="email" type="email" placeholder="Email" />
+                            <input name="email" 
+                            type="email" 
+                            placeholder="email" />
                             </label>              
-                        <label>
+                        <label class="container">
                             Password
-                    <input name="password" type="password" placeholder="Password" />
+                    <input name="password" 
+                    type="password" 
+                    placeholder="password" />
                         </label>
                     <button href="#" class="myButtonB" type="submit">log in</button>
             

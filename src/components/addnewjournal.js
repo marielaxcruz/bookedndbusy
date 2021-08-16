@@ -26,27 +26,29 @@ const NewJournal = ({selectedMarker, selectedDate}) => {
         usersCollection
         .doc(currentUser.uid)
         .collection('locations')
-        .doc(selectedMarker)
+        .doc("IyZUf6FVH3s3nE4PJR3P")
         .collection('dates')
-        .doc(selectedDate)
-        .set({
+        .doc("vm6J6AS1i6UekvwoFEZi")
+        .update({
             journalentry: journalNote,
         })
         .then(() => {
-            // function being called to change the state of journal 
+            // function being called to change the state of journal
+            alert("Journal Note added")
+            console.log ('This is the journal note being added :', journalNote) 
             setJournalNote('')
         })
     }
 
-
     return(
+        
         <div class="container">
             <div className="row">
-                <div className ="col-sm">
+                <div className ="col-md-2">
                     <SideBar />
                 </div>
                 <div className ="col-sm">
-                    <h2 class="display-6">Add a Journal Entry </h2>
+                    <h2 class="display-6">Add A Journal Entry </h2>
                         <p class="fst-italic" >Example Prompts: 
                             <ul>
                                 <li>Write about the people that you have interacted with.</li>
@@ -58,6 +60,7 @@ const NewJournal = ({selectedMarker, selectedDate}) => {
                             <form onSubmit={addJournal}>
                             <label>Reflect & write on your experience of the day </label>
                             <input 
+                                    className="box"
                                     type="text" 
                                     placeholder="Today was an adventurous day because ..."
                                     value={journalNote}

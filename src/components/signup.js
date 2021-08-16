@@ -4,6 +4,7 @@ import firebaseConfig from "../tools/firebase";
 import { AuthContext } from "./AuthConnect";
 import { usersCollection} from '../tools/firebase.js'
 import ProfilePic from './ProfilePic';
+import './SignUp.css'
 
 const SignUp = ({ history }) => {
 
@@ -49,23 +50,22 @@ const SignUp = ({ history }) => {
 
   return (
       <div class="container">
-        <div className="row">
-        <div className ="col">
+        <div>
+        <div>
           <h1>Register</h1>
           </div>
           <form onSubmit={handleSignUp}>
-          <div className="row">
-          <label>
+          <label class="container">
               Email:
-              </label>
+              
               <input 
                  name="email" 
                  type="email" 
                  placeholder="email" 
                 />
-        </div>
-        <div className ="col">
-          <label>
+                </label>
+        <div>
+          <label class="container">
               Password:
               <input 
                   name="password" 
@@ -73,8 +73,8 @@ const SignUp = ({ history }) => {
                   placeholder="password" />
           </label> 
           </div> 
-          <div className="row">     
-          <label>
+          <div >     
+          <label class="container">
               Name:
               <input 
                   name="userName" 
@@ -82,21 +82,21 @@ const SignUp = ({ history }) => {
                   placeholder="name" />
           </label>
           </div> 
-          <div className ="col"> 
-          <label>
+          <div> 
+          <label class="container">
             Bio:
               <input 
                   name="userBio" 
                   type="text" 
-                  placeholder="if I could teleport anywhere it would be ..." />
+                  placeholder="If I could teleport anywhere it would be ..." />
           </label>
           </div>
-          <div className="row">
-          <label>
+          <div>
+          <label class="container" >
               <ProfilePic />
           </label>
 </div>
-          <button class="myButtonB"  type="submit">register</button>
+          <button  class="myButtonB"  type="submit">register</button>
           </form>
       </div>
       </div>

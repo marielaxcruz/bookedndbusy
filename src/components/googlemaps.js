@@ -30,6 +30,7 @@ import mapstyles from './mapstyles';
 // new variable to avoid too many rerenders 
 import { AuthContext } from "./AuthConnect";
 import { usersCollection } from '../tools/firebase';
+import './GoogleMapsStyles.css';
 
 const libraries = ["places"]
 const mapContainerStyle = {
@@ -122,7 +123,7 @@ const Maps= ()=> {
     if (!isLoaded) return  "Loading Maps";
 
     return (
-    <div>
+    <div className="map">
         <Search panTo ={panTo} />
         <GoogleMap 
         mapContainerStyle={mapContainerStyle} 

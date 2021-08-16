@@ -41,7 +41,7 @@ const UploadNewProfilePhoto = ( { uid } ) => {
     return(
         <div>
             <form>
-            <label>Add a Profile Pic</label>
+            <label>Profile Pic: </label>
                 <div className='form'>
                     <input
                         type='file'

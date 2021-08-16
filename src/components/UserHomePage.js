@@ -8,6 +8,7 @@ import { usersCollection } from '../tools/firebase';
 import { AuthContext } from './AuthConnect';
 import {useContext} from "react";
 import { Redirect } from "react-router-dom";
+import './UserHomePage.css';
 
 // pass as a prop user data 
 // save user data as state 
@@ -55,7 +56,7 @@ const Home = () => {
                     </div>
             <div className="row">
             <div/>
-            <div  class="d-flex justify-content-center"className="row">
+            <div  className="row" >
             <Maps />
             </div>
             </div>

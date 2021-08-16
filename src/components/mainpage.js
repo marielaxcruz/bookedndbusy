@@ -18,7 +18,7 @@ const MainPage = () => {
                     </ul>
                         <h2 class="static-txt">in your adventure book</h2>          
             </div>
-            <div className ="col">
+            <div className="container-md" className ="col">
             <img src={newone} width="800"  alt='google map with pins'/>
             </div>
 </div>

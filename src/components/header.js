@@ -23,18 +23,13 @@ const LoggedOutHeader = () => {
             <nav class="navbar navbar-expand-lg ">
             <img src="https://img.icons8.com/plasticine/100/000000/suitcase.png" 
             alt = "suitcase" width="40" height="40" />
-                <Link  className="navbar-brand" to="/bookedndbusy">booked&busy</Link>
+                <Link className="navbar-brand" to="/bookedndbusy">booked&busy</Link>
                 <div className="collapse navbar-collapse" id="navbarCollapse">
                     <ul className="navbar-nav mr-auto">
-                        <li >
-                            <Link className="nav-link" to="/">temp user's Home</Link>
-                        </li>
                         </ul>
-    <button onClick={handleClick} class="myButtonB" type="button">login</button>
-    <button onClick={handleClicks}class="myButtonB" type="button">register</button> 
-    <SignOut />
+                    <button onClick={handleClick} class="myButtonB" type="button">login</button>
+                    <button onClick={handleClicks}class="myButtonB" type="button">register</button> 
 
-                
                 </div>
             </nav>
             </div>

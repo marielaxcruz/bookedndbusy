@@ -8,7 +8,7 @@ import { usersCollection } from '../tools/firebase';
 
 // Use by adding <DatePicker />. Use onChange prop for getting new values
 
-const NewDate = ({selectedMarker}) => {
+const NewDate = ({marker}) => {
     let history = useHistory();
     const handleClick =() => {
         history.push("/newphoto");
@@ -23,7 +23,7 @@ const NewDate = ({selectedMarker}) => {
         usersCollection
         .doc(currentUser.uid)
         .collection('locations')
-        .doc(selectedMarker)
+        .doc(marker)
         .collection('dates')
         .add({
             day: selectedDate,
@@ -38,19 +38,19 @@ const NewDate = ({selectedMarker}) => {
     return (
         <div class="container">
             <div className="row">
-            <div className ="col">
+            <div className ="col-md-2">
             <SideBar />
             </div>
             <div className ="col">
-                <h1>Add your First Travel Date</h1>
-                <form onSubmit={addNewDate}>
+                <h2 class="display-6">Add A Travel Date</h2>
+                <form>
             <DatePicker 
             placeholderText ="Select your date"
-            onSubmit={addNewDate}
+            onChange={onDateChange}
             value={selectedDate}
-            onChange={event => onDateChange(event.currentTarget.value)}
+            
     />
-    <button class="myButton" >submit date</button>
+    <button onClick={addNewDate}  class="myButton" >submit date</button>
     </form>
     </div>
     </div>

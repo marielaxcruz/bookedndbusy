@@ -17,7 +17,7 @@ const NewDate = () => {
             <div className ="col-md-2">
             <SideBar />
             </div>
-            <div className ="col">
+            <div className ="col-sm">
             <h1 class="display-6">Add a Travel Date</h1>
             </div>
         </div>
