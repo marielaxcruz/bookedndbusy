@@ -59,7 +59,10 @@ const SignUp = ({ history }) => {
               Email:
               </label>
               <input 
-                  placeholder="email" />
+                 name="email" 
+                 type="email" 
+                 placeholder="email" 
+                />
         </div>
         <div className ="col">
           <label>

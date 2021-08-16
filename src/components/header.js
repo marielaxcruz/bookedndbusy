@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 //import SignOut from './SignOut';
 import './header.css';
 import { useHistory } from "react-router";
+import SignOut from './SignOut';
 
 
 
@@ -30,7 +31,9 @@ const LoggedOutHeader = () => {
                         </li>
                         </ul>
     <button onClick={handleClick} class="myButtonB" type="button">login</button>
-    <button onClick={handleClicks}class="myButtonB" type="button">register</button>
+    <button onClick={handleClicks}class="myButtonB" type="button">register</button> 
+    <SignOut />
+
                 
                 </div>
             </nav>

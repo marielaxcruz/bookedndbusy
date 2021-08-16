@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import {
     GoogleMap,
     useLoadScript,
@@ -49,7 +49,7 @@ const options ={
 const Maps= ()=> {
     
        // state that holds the pins objects
-    const [pinsData, setpinsData]  = useState([]);
+    //const [pinsData, setpinsData]  = useState([]);
 
     const {isLoaded, loadError} = useLoadScript({
         googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
@@ -63,16 +63,24 @@ const Maps= ()=> {
     const [selected, setSelected] = React.useState(null);
     // access to the current user logged in 
     const {currentUser, userDetails} = useContext(AuthContext);
+
+    //fetch the list of markers for currentUser from db
+    useEffect(() => {
+        usersCollection
+        .doc(currentUser.uid)
+        .collection('locations').onSnapshot((snapshot) => setMarkers(snapshot.docs.map(doc => doc.data())))
+    }, [])
+
+    console.log("CURERENT MARKERS", markers)
+
     // function to start a add a new location/document to the database 
-    function addMarker(event) {
-        event.preventDefault()
+    function addMarker(marker) {
         usersCollection
         .doc(currentUser.uid)
         .collection('locations')
-        .add({
-            newcity: markers,
-        })
+        .add(marker)
         .then(() => {
+            //alert('Your adventure has been added!');
             // function being called to change the state of selected 
             setSelected('')
         })
@@ -81,15 +89,21 @@ const Maps= ()=> {
 
 
 
+
     // usecallback allows you to create a function that will always retain the same value unless the event has changed
+    // once the map is clicked a pin will show up 
     const onMapClick = React.useCallback((event) => {
-        setMarkers((current) => [...current, 
-        {
+        
+        const newMarker = {
             lat: event.latLng.lat(),
             lng: event.latLng.lng(),
             time: new Date(),
-        }
-    ]);
+        };
+        const existingMarkers = markers;
+        existingMarkers.push(newMarker)
+
+        setMarkers(existingMarkers);
+        addMarker(newMarker);
     }, [])
 
     // map instance - used later for searching to pan and zoom 
@@ -108,7 +122,7 @@ const Maps= ()=> {
     if (!isLoaded) return  "Loading Maps";
 
     return (
-    <div onClick={addMarker}>
+    <div>
         <Search panTo ={panTo} />
         <GoogleMap 
         mapContainerStyle={mapContainerStyle} 
@@ -122,13 +136,15 @@ const Maps= ()=> {
             <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyDif6oRl4k8ZlmtDyZrKW6O64KM8Ib7Ob"></script>
             {markers.map((marker) => (
             <Marker 
-            key={marker.time.toISOString()} 
-            position ={{lat:marker.lat, lng: marker.lng}}
+            key={marker.time}
+            position ={{lat:marker.lat, 
+                lng: marker.lng}}
             onClick = {() => {
                 setSelected(marker);
 
             }}
             />
+            
             // we can add a unique icon as well, something for later
             ))}
             {selected ? (
@@ -138,10 +154,9 @@ const Maps= ()=> {
             setSelected(null);
             }}
             >
+                
                 <div>
-                    <h2>Adventure to CITY NAME</h2>
-                    <p>Added {formatRelative(selected.time, new Date())}</p>
-                    <button>view this adventure</button>
+                    <button className="myButton">view this adventure</button>
                 </div>
             </InfoWindow>
             ) : null}

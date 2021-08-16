@@ -4,9 +4,10 @@ import { useHistory } from "react-router";
 import './AddNewJournal.css';
 import { usersCollection } from '../tools/firebase';
 import { AuthContext } from "./AuthConnect";
+
 //import NewDate from "./AddNewDate";
 
-const NewJournal = () => {
+const NewJournal = ({selectedMarker, selectedDate}) => {
     // state callback function when submit save state into firebase/put 
     let history = useHistory();
     const handleClick =() => {
@@ -25,9 +26,9 @@ const NewJournal = () => {
         usersCollection
         .doc(currentUser.uid)
         .collection('locations')
-        .doc('VBfRdZZVgSEOoNkythmW')
+        .doc(selectedMarker)
         .collection('dates')
-        .doc("day_1")
+        .doc(selectedDate)
         .set({
             journalentry: journalNote,
         })
@@ -44,9 +45,6 @@ const NewJournal = () => {
                 <div className ="col-sm">
                     <SideBar />
                 </div>
-                <div className ="col-sm">
-                    <h1 class="display-6">Date</h1>
-                            </div>
                 <div className ="col-sm">
                     <h2 class="display-6">Add a Journal Entry </h2>
                         <p class="fst-italic" >Example Prompts: 

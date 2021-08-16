@@ -33,7 +33,7 @@ const Home = () => {
     <div className="container-md">
         <div className="row gx-5">
             <div className ="col-md-2">
-            <img src = "https://lh3.googleusercontent.com/proxy/rGmte5ziIGUt5sKtWDXqfbXUHbRlGj0v6wAamoFrcwydYlAmlcxCL5V4NpAfSJDRchLwebs1GfdOsNLRhM0Mk47XfniEK5MArLLTjvBOrNMzehfNwTE" alt="user pic"/>
+            <img src = "https://lh3.googleusercontent.com/proxy/VXjK_pWdFXfyRL63syK5TOmdpy4bSC4hFJhOnymefCzlGG1tir_ZYDBt1p8Qm_kf2_hyT-R6MsN6H4qJNHV7ZgqWWNhEVN03yxQT8gvewufik5vqr6s" alt="user pic"/>
             </div>
             <div className ="col">
             <h1 class="display-6">Welcome {userDetails.name}!</h1>
@@ -46,12 +46,12 @@ const Home = () => {
                 type="submit">
                     Add a new Adventure
                     </button>
+                    <div className="row"></div>
                     <button class="myButton" 
                     onClick={handleAdventure} 
                     >
                     View all your adventures
                     </button>
-                    <SignOut />
                     </div>
             <div className="row">
             <div/>

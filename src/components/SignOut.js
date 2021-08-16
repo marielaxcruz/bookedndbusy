@@ -6,7 +6,7 @@ const SignOut = () => {
     return (
     <div>
         <button class="myButtonB" onClick={() => firebaseConfig.auth().signOut()}>
-            Sign Out
+            sign out
         </button>
     </div>
 );
