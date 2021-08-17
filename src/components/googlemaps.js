@@ -15,6 +15,8 @@ import usePlacesAutocomplete, {
     getLatLng,
 } from "use-places-autocomplete";
 
+import { useHistory } from "react-router";
+
 // Accessible combobox (autocomplete or autosuggest) component for React.
 import {
     Combobox,
@@ -33,6 +35,7 @@ import { usersCollection } from '../tools/firebase';
 import './GoogleMapsStyles.css';
 import swal from 'sweetalert';
 
+
 const libraries = ["places"]
 const mapContainerStyle = {
     width: '50vw',
@@ -48,8 +51,8 @@ const options ={
     zoomControl:true
 }
 
-const Maps= ()=> {
-    
+const Maps= (props)=> {
+    let history = useHistory();
        // state that holds the pins objects
     //const [pinsData, setpinsData]  = useState([]);
 
@@ -70,10 +73,15 @@ const Maps= ()=> {
     useEffect(() => {
         usersCollection
         .doc(currentUser.uid)
-        .collection('locations').onSnapshot((snapshot) => setMarkers(snapshot.docs.map(doc => doc.data())))
+        .collection('locations').onSnapshot((snapshot) => setMarkers(snapshot.docs.map(doc => Object.assign({id: doc.id}, doc.data()))))
+
     }, [])
 
     console.log("CURERENT MARKERS", markers)
+
+    const handleClick = () => {
+        props.setNext('date');
+    }
 
     // function to start a add a new location/document to the database 
     function addMarker(marker) {
@@ -81,9 +89,19 @@ const Maps= ()=> {
         .doc(currentUser.uid)
         .collection('locations')
         .add(marker)
-        .then(() => {
+        .then((data) => {
             //alert('Your adventure has been added!');
             // function being called to change the state of selected 
+            //console.log("Location data ID", data.id);
+            //const newMarker = {
+            //    lat: event.latLng.lat(),
+            //    lng: event.latLng.lng(),
+            //    time: new Date(),
+            //};
+            const existingMarkers = markers;
+            existingMarkers.push(Object.assign({id: data.id}, marker))
+            setMarkers(existingMarkers)
+            props.setCurrentLocation(data.id);
             swal("Your pin was added!");
             setSelected('')
             // prop.setLocation(marker)
@@ -103,10 +121,10 @@ const Maps= ()=> {
             lng: event.latLng.lng(),
             time: new Date(),
         };
-        const existingMarkers = markers;
-        existingMarkers.push(newMarker)
+        //const existingMarkers = markers;
+        //existingMarkers.push(newMarker)
 
-        setMarkers(existingMarkers);
+        //setMarkers(existingMarkers);
         addMarker(newMarker);
     }, [])
 
@@ -121,6 +139,11 @@ const Maps= ()=> {
         mapRef.current.panTo({lat,lng});
         mapRef.current.setZoom(14);
     }, []);
+
+    const handleAdventure = () => {
+        //console.log("Cuurent Adventrue", selected);
+        history.push({pathname: "/viewadventure", state: selected});
+    }
 
     if (loadError) return "Error loading maps";
     if (!isLoaded) return  "Loading Maps";
@@ -160,7 +183,7 @@ const Maps= ()=> {
             >
                 
                 <div>
-                    <button className="myButton">view this adventure</button>
+                    <button className="myButton" onClick={handleAdventure}>view this adventure</button>
                 </div>
             </InfoWindow>
             ) : null}
@@ -168,7 +191,9 @@ const Maps= ()=> {
         </GoogleMap>
 
 
-
+       {props.showNext == true && (<div className ="row">
+        <button onClick={handleClick} className="btn btn-secondary btn-lg btn-block" type="submit">Next</button>
+        </div>)}
     </div>
     );
 }

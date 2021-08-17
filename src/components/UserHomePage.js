@@ -57,7 +57,7 @@ const Home = () => {
             <div>
                 <div>
             <div className="map" >
-            <Maps />
+            <Maps showNext={false}/>
             </div>
             </div>
             </div>

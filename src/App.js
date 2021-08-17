@@ -18,6 +18,7 @@ import LoggedInHeader from"./components/LoggedInHeader";
 import firebase from "./tools/firebase";
 import AllAdventures from './components/ViewAllAdventures';
 import { AuthContext } from './components/AuthConnect';
+import ViewOneAdventure from './components/ViewOneAdventure';
 
 
 // wrapping our layer with auth provider so everything below it will have access to current user through the context api
@@ -73,6 +74,7 @@ const App = () => {
           <PrivateRoute exact path="/newdate" component={NewDate} />
           <PrivateRoute exact path="/review" component={ReviewPage} />
           <PrivateRoute exact path="/alladventures" component={AllAdventures} />
+          <PrivateRoute exact path="/viewadventure" component={ViewOneAdventure} />
         </div>
       </Router>
   

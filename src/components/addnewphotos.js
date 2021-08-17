@@ -2,7 +2,7 @@
 import React, {useContext, useEffect} from 'react';
 import { storageRef , usersCollection} from '../tools/firebase.js'
 import SideBar from "./SideBar";
-import { useHistory } from "react-router";
+//import { useHistory } from "react-router";
 import firebaseConfig from '../tools/firebase';
 import { AuthContext } from "./AuthConnect";
 import swal from 'sweetalert';
@@ -10,10 +10,11 @@ import swal from 'sweetalert';
 
 // comment from tutor - Is it the same code that adds new image to that array? Also make sure you the file url is updated first and then you add it to db. If an item already exists in that array, it won't be added again.
 
-function AddNewPhotos() {
-    let history = useHistory();
+function AddNewPhotos(props) {
+    //let history = useHistory();
     const handleClick =() => {
-    history.push("/newjournal");
+    //history.push("/newjournal");
+    props.setNext('journal');
     }
     const {currentUser, userDetails} = useContext(AuthContext);
     const [fileUrl, setFileUrl] = React.useState(null);
@@ -33,9 +34,9 @@ function AddNewPhotos() {
         await usersCollection
         .doc(currentUser.uid)
         .collection('locations')
-        .doc('tWaNaKTXRaDqmjyM2D6U')
+        .doc(props.currentLocation)
         .collection('dates')
-        .doc("FgQB885bDFYMlbgPNMlJ")
+        .doc(props.currentDate)
         .update({
             travelphotos: firebaseConfig.firestore.FieldValue.arrayUnion(fileUrl),
         })

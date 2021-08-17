@@ -9,10 +9,11 @@ import swal from 'sweetalert';
 
 // Use by adding <DatePicker />. Use onChange prop for getting new values
 
-const NewDate = ({marker}) => {
+const NewDate = ({setNext, currentLocation, setCurrentDate}) => {
     let history = useHistory();
     const handleClick =() => {
-        history.push("/newphoto");
+        //history.push("/newphoto");
+        setNext('photo');
     };
 
     const {currentUser, userDetails} = useContext(AuthContext);
@@ -24,13 +25,15 @@ const NewDate = ({marker}) => {
         usersCollection
         .doc(currentUser.uid)
         .collection('locations')
-        .doc(marker)
+        .doc(currentLocation)
         .collection('dates')
         .add({
             day: selectedDate,
         })
-        .then(() => {
+        .then((data) => {
             // function being called to change the state of journal
+            //console.log(data.id)
+            setCurrentDate(data.id);
             swal("Your travel date was added!"); 
             onDateChange('')
         })
@@ -57,7 +60,7 @@ const NewDate = ({marker}) => {
     </div>
     </div>
     <div className="row">
-    <button className ="color" onClick={handleClick} class="btn btn-secondary btn-lg btn-block" >next</button>
+    <button className ="color" onClick={handleClick} class="btn btn-secondary btn-lg btn-block" >Next</button>
     </div>
     </div>
 

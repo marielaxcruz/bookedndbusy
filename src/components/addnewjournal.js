@@ -8,14 +8,16 @@ import swal from 'sweetalert';
 
 //import NewDate from "./AddNewDate";
 
-const NewJournal = () => {
+const NewJournal = ({currentLocation, setNext, currentDate}) => {
     // state callback function when submit save state into firebase/put 
     let history = useHistory();
     const handleClick =() => {
-        history.push("/newdate");
+        //history.push("/newdate");
+        setNext('date');
     };
-    const handleReview =() => {
-        history.push("/review");
+    const redirectToHome =() => {
+        //history.push("/review");
+        history.push("/")
     };
     const {currentUser, userDetails} = useContext(AuthContext);
     // set the state before you begin 
@@ -27,9 +29,9 @@ const NewJournal = () => {
         usersCollection
         .doc(currentUser.uid)
         .collection('locations')
-        .doc("tWaNaKTXRaDqmjyM2D6U")
+        .doc(currentLocation)
         .collection('dates')
-        .doc("FgQB885bDFYMlbgPNMlJ")
+        .doc(currentDate)
         .update({
             journalentry: journalNote,
         })
@@ -74,7 +76,7 @@ const NewJournal = () => {
                             
                             <div className="row">
                             <button className ="color" onClick={handleClick} class="btn btn-secondary btn-lg btn-block" >add another date</button>
-                            <button className ="color" onClick={handleReview} class="btn btn-secondary btn-lg btn-block" >all done! let's review</button>
+                            <button className ="color" onClick={redirectToHome} class="btn btn-secondary btn-lg btn-block" >all done! let's go home</button>
                 </div>
             </div>
         </div>
