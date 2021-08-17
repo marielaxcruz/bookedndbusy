@@ -1,5 +1,4 @@
 // the user will interact with the yelp api and save the searches they visited on their trip 
-//import { sub } from "date-fns";
 import React, { useState } from "react";
 import { SearchResults } from "./searchresults";
 // use state hook for functional component, every time we update term we will call set term function and we will show 2 items, if they dont pass anything it will be empty 

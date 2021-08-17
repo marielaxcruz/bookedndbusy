@@ -1,11 +1,11 @@
 export const firebaseLooper = (snapshot) =>{
-    let data = [];
+    let markers_info = [];
     snapshot.forEach( doc => {
-        data.push({
+        markers_info.push({
             ...doc.data(),
             id: doc.id
 
         })
     });
-    return data;
+    return markers_info;
 };

@@ -19,6 +19,7 @@ body {
 	padding:7px 24px;
 	text-decoration:none;
 	text-shadow:0px 1px 0px #2f6627;
+	margin: 8px;
 }
 .myButton:hover {
 	background-color:#2596BE;
@@ -36,10 +37,13 @@ body {
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
+	text-align: right;
 	font-family:Trebuchet MS;
 	font-size:15px;
 	padding:7px 18px;
 	text-decoration:none;
+	margin: 8px;
+	
 }
 .myButtonB:hover {
 	background-color:#FB8F67;
@@ -61,6 +65,8 @@ body {
 	font-size:15px;
 	padding:7px 18px;
 	text-decoration:none;
+	margin-top: 10px;
+
 }
 .myButtonBB:hover {
 	background-color:#FB8F67;
@@ -70,10 +76,21 @@ body {
 	top:1px;
 }
 
-/**{
-	background-color: #FAFCFD;
-	position: relative;
-	z-index: 100000;*/
-
+body{
+	background-color:#F7FAFB !important; 
+}
 /*position: relative;
 z-index: auto*/
+.nav {
+    display: inline;
+	list-style-type: none;
+	margin: 0;
+}
+
+.floatRight{
+	float: right;
+}
+nav-link{
+	color:black
+}
+

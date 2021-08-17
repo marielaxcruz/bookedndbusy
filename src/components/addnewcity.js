@@ -4,9 +4,7 @@ import Maps from "./googlemaps";
 import { useHistory } from "react-router";
 import { usersCollection } from '../tools/firebase';
 import { AuthContext } from "./AuthConnect";
-// import React, { useCallback, useContext } from "react";
-////import { withRouter, Redirect } from "react-router";
-//import firebaseConfig from 'firebase';
+
 // I have a location collection per user i, and each time I receive the marker click you would call the firestore sdk to add this data like in the add data section here, and during your app initialization use the read data to serialize your geopoints (the supported data type for geolocation in firebase) and put then in the map as markers.
 
 

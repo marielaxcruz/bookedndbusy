@@ -5,6 +5,7 @@ import { useHistory } from "react-router";
 import DatePicker from 'react-date-picker';
 import { AuthContext } from "./AuthConnect";
 import { usersCollection } from '../tools/firebase';
+import swal from 'sweetalert';
 
 // Use by adding <DatePicker />. Use onChange prop for getting new values
 
@@ -29,7 +30,8 @@ const NewDate = ({marker}) => {
             day: selectedDate,
         })
         .then(() => {
-            // function being called to change the state of journal 
+            // function being called to change the state of journal
+            swal("Your travel date was added!"); 
             onDateChange('')
         })
     }
@@ -50,7 +52,7 @@ const NewDate = ({marker}) => {
             value={selectedDate}
             
     />
-    <button onClick={addNewDate}  class="myButton" >submit date</button>
+    <button  onClick={addNewDate}  class="myButton" >submit date</button>
     </form>
     </div>
     </div>

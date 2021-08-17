@@ -5,6 +5,7 @@ import SideBar from "./SideBar";
 import { useHistory } from "react-router";
 import firebaseConfig from '../tools/firebase';
 import { AuthContext } from "./AuthConnect";
+import swal from 'sweetalert';
 
 
 // comment from tutor - Is it the same code that adds new image to that array? Also make sure you the file url is updated first and then you add it to db. If an item already exists in that array, it won't be added again.
@@ -32,31 +33,35 @@ function AddNewPhotos() {
         await usersCollection
         .doc(currentUser.uid)
         .collection('locations')
-        .doc('VBfRdZZVgSEOoNkythmW')
+        .doc('tWaNaKTXRaDqmjyM2D6U')
         .collection('dates')
-        .doc("day_1")
-        .set({
+        .doc("FgQB885bDFYMlbgPNMlJ")
+        .update({
             travelphotos: firebaseConfig.firestore.FieldValue.arrayUnion(fileUrl),
-        });
+        })
+        .then(() => {
+            // function being called to change the state of journal
+            swal("Your photos have been added"); 
+        })
     
     };
-
-    useEffect(() => {
-        const fetchPhotos = async () => {
-        const photoCollection = await 
-            usersCollection
-            .doc(currentUser.uid)
-            .collection('locations')
-            .doc('VBfRdZZVgSEOoNkythmW')
-            .collection('dates')
-            .doc("day_1")
-            .get();
-            setPhotos(
-                photoCollection.data().travel_photos
-                );
-            };
-        fetchPhotos();
-        }, []);
+    // attempting to display the photos on the page as they get uploaded 
+    //useEffect(() => {
+    //    const fetchPhotos = async () => {
+    //    const photoCollection = await 
+    //        usersCollection
+    //        .doc(currentUser.uid)
+    //        .collection('locations')
+    //        .doc('VBfRdZZVgSEOoNkythmW')
+    //        .collection('dates')
+    //        .doc("T0GUEH6AxnkBKxPKgBl9")
+    //        .get();
+    //        setPhotos(
+    //            photoCollection.data().travel_photos
+    //            );
+    //        };
+    //    fetchPhotos();
+    //    }, []);
 
 return (
     <div class="container" >
@@ -68,7 +73,7 @@ return (
             <label class="display-6"> Add Photos </label>
             <form onSubmit={onSubmit}>
                 <input type="file" onChange={onFileChange} />
-                <button className="btn btn-primary">Submit</button>
+                <button className="myButton"> submit photos</button>
             </form>
         <ul>
             <li >

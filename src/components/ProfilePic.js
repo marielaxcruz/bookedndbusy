@@ -2,10 +2,8 @@
 // profile pic that will get stored in firebase storage 
 
 import React from 'react';
-// import React, { useState, useEffect } from 'react';
 import { storageRef , usersCollection} from '../tools/firebase.js'
-// import { storage, storageRef , usersCollection} from '../firebase.js'
-//import { withRouter, Redirect } from "react-router";
+
 
 // the props that are being passed down is the user id and the lat/lng of pin the user is currently adding photos to their adventure book 
 const UploadNewProfilePhoto = ( { uid } ) => {

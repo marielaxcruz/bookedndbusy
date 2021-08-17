@@ -4,10 +4,11 @@ import { useHistory } from "react-router";
 import './AddNewJournal.css';
 import { usersCollection } from '../tools/firebase';
 import { AuthContext } from "./AuthConnect";
+import swal from 'sweetalert';
 
 //import NewDate from "./AddNewDate";
 
-const NewJournal = ({selectedMarker, selectedDate}) => {
+const NewJournal = () => {
     // state callback function when submit save state into firebase/put 
     let history = useHistory();
     const handleClick =() => {
@@ -26,15 +27,16 @@ const NewJournal = ({selectedMarker, selectedDate}) => {
         usersCollection
         .doc(currentUser.uid)
         .collection('locations')
-        .doc("IyZUf6FVH3s3nE4PJR3P")
+        .doc("tWaNaKTXRaDqmjyM2D6U")
         .collection('dates')
-        .doc("vm6J6AS1i6UekvwoFEZi")
+        .doc("FgQB885bDFYMlbgPNMlJ")
         .update({
             journalentry: journalNote,
         })
         .then(() => {
             // function being called to change the state of journal
-            alert("Journal Note added")
+            //alert("Journal Note added")
+            swal("Your journal entry was added!");
             console.log ('This is the journal note being added :', journalNote) 
             setJournalNote('')
         })
@@ -66,7 +68,7 @@ const NewJournal = ({selectedMarker, selectedDate}) => {
                                     value={journalNote}
                                     onChange={event => setJournalNote(event.currentTarget.value)}
                             />
-                            <button type="submit" class="myButton">Add Journal</button>
+                            <button  type="submit" class="myButton">submit journal</button>
                             </form>
                             </div>
                             

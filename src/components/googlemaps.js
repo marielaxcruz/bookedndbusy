@@ -31,6 +31,7 @@ import mapstyles from './mapstyles';
 import { AuthContext } from "./AuthConnect";
 import { usersCollection } from '../tools/firebase';
 import './GoogleMapsStyles.css';
+import swal from 'sweetalert';
 
 const libraries = ["places"]
 const mapContainerStyle = {
@@ -83,7 +84,9 @@ const Maps= ()=> {
         .then(() => {
             //alert('Your adventure has been added!');
             // function being called to change the state of selected 
+            swal("Your pin was added!");
             setSelected('')
+            // prop.setLocation(marker)
         })
     }
 
@@ -123,7 +126,7 @@ const Maps= ()=> {
     if (!isLoaded) return  "Loading Maps";
 
     return (
-    <div className="map">
+    <div >
         <Search panTo ={panTo} />
         <GoogleMap 
         mapContainerStyle={mapContainerStyle} 

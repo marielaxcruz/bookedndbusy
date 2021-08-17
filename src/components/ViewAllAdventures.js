@@ -2,7 +2,6 @@
 import React, {Component} from 'react';
 import {firebaseLooper} from '../tools/firebaselooper';
 import { usersCollection } from '../tools/firebase';
-//import SideBar from './SideBar';
 // when this components loads I want to go to the database and fetch the data 
 class AllAdventures extends Component {
     
@@ -11,7 +10,9 @@ class AllAdventures extends Component {
     }
     // updates made using reference, this allows you to export different collections and use them
     componentDidMount(){
-        usersCollection.get().then(snapshot =>{
+        usersCollection
+        .get()
+        .then(snapshot =>{
             //// we get the id and the data printed into the console
             //snapshot.forEach(doc =>{
             //    console.log(doc.id)
@@ -33,14 +34,10 @@ class AllAdventures extends Component {
         users ?
             users.map((data, i ) => (
                 <tr key ={i}>
-                    <th> {data.id}</th>
-                    <th> {data.name}</th>
-                    <th> {data.bio}</th>
-                    {/*<th> {data.dates}</th>*/}
-                    {/*<th> {data.Journal}</th>*/}
-                    {/*<th> {data.bio}</th>*/}
-                    <th> {data.profile}</th>
-                    {/*<th> {data.entry}</th>*/}
+                    <th> {data.locations}</th>
+                    <th> {data.day}</th>
+                    <th> {data.journalentry}</th>
+                    <th> {data.travelphotos}</th>
                 </tr>
 
             
@@ -50,20 +47,16 @@ class AllAdventures extends Component {
     )
     render(){
         //const users = this.state.users;
-        console.log("rendering users")
+        console.log("rendering user locations")
         return(
             <main  class="container">
-                {/*<SideBar />*/}
-                {/*<link href="/css/main.min.css" rel="stylesheet"></link>*/}
-                <table className="table table-dark">
+                <table className="table table-light">
                     <thread>
                         <tr>
-                            <th>ID</th>
-                            {/*<th>Location</th>*/}
-                            <th>Name</th>
-                            <th>Bio</th>
-                            {/*<th>Display Journal</th>
-                            <th>Entry Created</th>*/}
+                            <th>Location</th>
+                            <th>Date</th>
+                            <th>Journal Entry</th>
+                            <th>Photos</th>
                         </tr>
                     </thread>
                     <tbody>

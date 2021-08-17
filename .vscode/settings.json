@@ -3,5 +3,8 @@
         "firebaselooper",
         "journalentry",
         "userinfo"
+    ],
+    "cSpell.words": [
+        "swal"
     ]
 }

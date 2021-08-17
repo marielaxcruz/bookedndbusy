@@ -1,8 +1,5 @@
 import React from 'react';
-//import { Link } from 'react-router-dom';
-//import firebaseConfig from "../firebase.js";
 import './mainpage.css';
-//import Maps from "./googlemaps";
 import newone from '../images/newone.png';
 const MainPage = () => {
     return (

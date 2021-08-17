@@ -1,5 +1,6 @@
-/*.map {
-    position: relative;
-	z-index: 500;
-    background-color: #FAFCFD;
-  }*/
+.map {
+    height: 70%; 
+    width :50%; 
+    margin-left:auto; 
+    margin-right:auto;
+}

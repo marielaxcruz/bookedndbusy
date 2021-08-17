@@ -35,10 +35,12 @@ import { AuthContext } from './components/AuthConnect';
 //            setLoggedIn(false)
 //      }})
 //    }, []);
-
+// call back 
+// locatuon, l
 const App = () => {
     // if the user is not logged in we show logged out nav bar else show loggedinnavbar
     const {currentUser, userDetails} = useContext(AuthContext);
+// const, location, setloction =usestate (null) - props as 
     firebase.auth().onAuthStateChanged( user => {
       if (user) {
         
@@ -73,7 +75,7 @@ const App = () => {
           <PrivateRoute exact path="/alladventures" component={AllAdventures} />
         </div>
       </Router>
-   
+  
   );
 };
 
