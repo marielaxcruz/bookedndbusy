@@ -1,13 +1,14 @@
 // this will hold the user's:
 // profile pic that will get stored in firebase storage 
 
-import React from 'react';
+import React, {useContext} from 'react';
 import { storageRef , usersCollection} from '../tools/firebase.js'
+import { AuthContext } from "./AuthConnect";
 
 
 // the props that are being passed down is the user id and the lat/lng of pin the user is currently adding photos to their adventure book 
-const UploadNewProfilePhoto = ( { uid } ) => {
-    
+const UploadNewProfilePhoto = ({uid} ) => {
+    const {currentUser, userDetails} = useContext(AuthContext);
     const handleChange =  (event) => {
         event.preventDefault()
         

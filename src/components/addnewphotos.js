@@ -21,7 +21,7 @@ function AddNewPhotos(props) {
     const [photos, setPhotos] = React.useState([]);
 
     const onFileChange = async (e) => {
-    const file = e.target.files[0];
+    const file = e.target.files;
     const storageRef = firebaseConfig.storage().ref();
     const fileRef = storageRef.child(`/user/images/${file.name}`);
     await fileRef.put(file);
@@ -38,7 +38,8 @@ function AddNewPhotos(props) {
         .collection('dates')
         .doc(props.currentDate)
         .update({
-            travelphotos: firebaseConfig.firestore.FieldValue.arrayUnion(fileUrl),
+            travelphotos: fileUrl
+            // firebaseConfig.firestore.FieldValue.arrayUnion(fileUrl),
         })
         .then(() => {
             // function being called to change the state of journal
@@ -46,23 +47,23 @@ function AddNewPhotos(props) {
         })
     
     };
-    // attempting to display the photos on the page as they get uploaded 
-    //useEffect(() => {
-    //    const fetchPhotos = async () => {
-    //    const photoCollection = await 
-    //        usersCollection
-    //        .doc(currentUser.uid)
-    //        .collection('locations')
-    //        .doc('VBfRdZZVgSEOoNkythmW')
-    //        .collection('dates')
-    //        .doc("T0GUEH6AxnkBKxPKgBl9")
-    //        .get();
-    //        setPhotos(
-    //            photoCollection.data().travel_photos
-    //            );
-    //        };
-    //    fetchPhotos();
-    //    }, []);
+     //attempting to display the photos on the page as they get uploaded 
+    useEffect(() => {
+        const fetchPhotos = async () => {
+        const photoCollection = await 
+            usersCollection
+            .doc(currentUser.uid)
+            .collection('locations')
+            .doc(props.currentLocation)
+            .collection('dates')
+            .doc(props.currentDate)
+            .get();
+            setPhotos(
+                photoCollection.data().travel_photos
+                );
+            };
+        fetchPhotos();
+        }, []);
 
 return (
     <div class="container" >

@@ -31,15 +31,18 @@ const Home = () => {
     }
 
     return (
-    <div className="container-md">
+    <div className="container">
         <div  class="row justify-content-md-center">
             <div className ="col-md-2">
-            <img src = "https://lh3.googleusercontent.com/proxy/VXjK_pWdFXfyRL63syK5TOmdpy4bSC4hFJhOnymefCzlGG1tir_ZYDBt1p8Qm_kf2_hyT-R6MsN6H4qJNHV7ZgqWWNhEVN03yxQT8gvewufik5vqr6s" alt="user pic"/>
+            <img 
+            src={userDetails.profilepic}
+            width="210"
+            height="170"
+            ></img>
             </div>
             <div class="col-md-auto">
             <h1 class="display-6">Welcome {userDetails.name}!</h1>
             <p class="fst-italic">If I could teleport anywhere it would be {userDetails.bio}!</p>
-            {/*<p>{userDetails.profilepic}</p>*/}
             </div>
             <div class="col col-lg-2">
                 <button onClick={handleClick} 

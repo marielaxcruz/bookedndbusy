@@ -38,7 +38,7 @@ import swal from 'sweetalert';
 
 const libraries = ["places"]
 const mapContainerStyle = {
-    width: '50vw',
+    width: '59vw',
     height: "50vh",
 };
 const center = {
@@ -150,7 +150,7 @@ const Maps= (props)=> {
 
     return (
     <div >
-        <Search panTo ={panTo} />
+        <Search  panTo ={panTo} />
         <GoogleMap 
         mapContainerStyle={mapContainerStyle} 
         zoom={2}
@@ -207,7 +207,7 @@ function Search({panTo}){
         }
     });
 
-    return <div>
+    return <div className="search">
     <Combobox 
     onSelect={async (address)=> {
         setValue(address,false);
