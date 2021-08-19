@@ -50,28 +50,6 @@ const ViewOneAdventure = (props) => {
          
           <div>
           <img
-            src={firstday1}
-            alt="image"
-            width="300"
-            height="400"
-          ></img>
-          <img
-            src={brunch}
-            alt="image"
-            width="400"
-            height="400"
-          ></img>
-          <img
-            src={toy}
-            alt="image"
-            width="400"
-            height="400"
-          ></img>
-          </div>
-          <h2>Day 2 November 17th, 2018</h2>
-          <p>We wanted to explore the city more today so we walked to the Eiffel tower !! omg! Paris is city that you always want to come back to. The flow of our day to day felt so natural almost as if we were returning to place we had been to before. After visiting the Eiffel tower, we decided to make our way over to Champs-Élysées. On our way there, we encountered the beginning of a economic justice protest, known as the yellow vest protest.  Being a global studies major, witnessing first hand people organizing for change was very moving.  </p>
-          <div>
-          <img
             src={effiel}
             alt="image"
             width="300"
@@ -89,6 +67,29 @@ const ViewOneAdventure = (props) => {
             width="400"
             height="400"
           ></img>
+          </div>
+          <h2>Day 2 November 17th, 2018</h2>
+          <p>In the morning, we had french toast for breakfast and it was surprisingly very delicious since there was no syrup added. I wanted to check out the Louvre aka Beyonce APESHIT music video set. Comfort over style when it comes to traveling. We walked much at the museum that we had to take mini breaks. We spent all day at the museum and then just walked home.  </p>
+          <div>
+          <img
+            src={firstday1}
+            alt="image"
+            width="300"
+            height="400"
+          ></img>
+          <img
+            src={brunch}
+            alt="image"
+            width="400"
+            height="400"
+          ></img>
+          <img
+            src={toy}
+            alt="image"
+            width="400"
+            height="400"
+          ></img>
+          
           </div>
           <h2>Day 3 November 18th, 2018</h2>
           <p>
