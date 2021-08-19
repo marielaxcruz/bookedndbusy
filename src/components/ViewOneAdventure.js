@@ -11,6 +11,13 @@ import protest from "/Users/marielacruz/ada/bookedndbusy/src/images/protest.jpg"
 import nortedame from "/Users/marielacruz/ada/bookedndbusy/src/images/nortedame.JPG";
 import mus from "/Users/marielacruz/ada/bookedndbusy/src/images/mus.JPG";
 import mac from "/Users/marielacruz/ada/bookedndbusy/src/images/mac.JPG";
+import view from "/Users/marielacruz/ada/bookedndbusy/src/images/view.jpg";
+import cake from "/Users/marielacruz/ada/bookedndbusy/src/images/cake.jpg"
+import happy from "/Users/marielacruz/ada/bookedndbusy/src/images/happy.jpg"
+import beach from "/Users/marielacruz/ada/bookedndbusy/src/images/beach.jpg"
+import tats from "/Users/marielacruz/ada/bookedndbusy/src/images/tats.jpg"
+import bye from "/Users/marielacruz/ada/bookedndbusy/src/images/bye.jpg"
+import food from "/Users/marielacruz/ada/bookedndbusy/src/images/food.jpg"
 
 const ViewOneAdventure = (props) => {
   const { currentUser, userDetails } = useContext(AuthContext);
@@ -40,83 +47,70 @@ const ViewOneAdventure = (props) => {
   return (
     <div class="container">
       <h1 class="display-6">Your Adventure </h1>
-      <h2>Day 1 November 16th, 2018</h2>
+      <h2>Day 1 August 13th, 2021</h2>
 
-      {results.map((result) => (
+      {/*{results.map((result) => (*/}
         <p>
           {/*<span> {result.day}</span>*/}
-          <span>Journal Entry: {result.journalentry}</span>
+          <span>It's My Birthday! I landed in Miami very early this morning and I felt pretty exhausted by the afternoon.
+ Once all my friends arrived, I felt a burst of energy. I am so happy they are here to celebrate my birthday weekend with me. 
+The weather is very different from what I am used to... 
+ I had my birthday dinner at Crazy About You! The food and ambiance was amazing! </span>
           <p>Images</p>
          
           <div>
           <img
-            src={effiel}
+            src={view}
             alt="image"
             width="300"
             height="400"
           ></img>
           <img
-            src={secondary}
+            src={cake}
             alt="image"
             width="400"
             height="400"
           ></img>
-          <img
-            src={protest}
-            alt="image"
-            width="400"
-            height="400"
-          ></img>
+         
           </div>
-          <h2>Day 2 November 17th, 2018</h2>
-          <p>In the morning, we had french toast for breakfast and it was surprisingly very delicious since there was no syrup added. I wanted to check out the Louvre aka Beyonce APESHIT music video set. Comfort over style when it comes to traveling. We walked much at the museum that we had to take mini breaks. We spent all day at the museum and then just walked home.  </p>
+          <h2>Day 2 August 14, 2021</h2>
+          <p>We had a very relaxing day at Miami Beach, Nancy and I got henna tattoos. I think I can see myself living here 👀 </p>
           <div>
           <img
-            src={firstday1}
+            src={beach}
             alt="image"
             width="300"
             height="400"
           ></img>
           <img
-            src={brunch}
+            src={tats}
             alt="image"
             width="400"
             height="400"
           ></img>
-          <img
-            src={toy}
-            alt="image"
-            width="400"
-            height="400"
-          ></img>
+        
           
           </div>
-          <h2>Day 3 November 18th, 2018</h2>
+          <h2>Day 3 August 15th,2021</h2>
           <p>
-          Today, we went to Notre-Dame de Paris, I tried macaroons for the first time, and ended our day at a museum. Overall, I feel in love with this city. Being in Paris made me fall in love with traveling to new place all over again. My favorite thing about the city would have to be the ease of taking public transportation everywhere to visit all these different places. There is so much to see, you will never need to visit the same place twice. 
+          Last day !! :( and had a fun time grabbing brunch at Bacon B**** . Definitely a gem! This trip was much needed. Next time I come to Miami I would love to spend more time here exploring more of the city and the rich culture. 
           </p>
           <div>
           <img
-            src={nortedame}
+            src={food}
             alt="image"
             width="350"
             height="400"
           ></img>
           <img
-            src={mac}
-            alt="image"
-            width="400"
-            height="400"
-          ></img>
-          <img
-            src={mus}
+            src={bye}
             alt="image"
             width="400"
             height="400"
           ></img>
           </div>
         </p>
-      ))}
+    
     </div>
   );
 };
