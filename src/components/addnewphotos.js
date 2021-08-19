@@ -77,11 +77,11 @@ return (
                 <input type="file" onChange={onFileChange} />
                 <button className="myButton"> submit photos</button>
             </form>
-        <ul>
+        {/*<ul>
             <li >
             <img width="100" height="100" src={userDetails.travelphotos} />
             </li>
-        </ul>
+        </ul>*/}
     </div>
     </div>
         <div className="row">
