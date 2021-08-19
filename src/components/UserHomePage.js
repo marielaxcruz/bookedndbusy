@@ -11,6 +11,7 @@ import { Redirect } from "react-router-dom";
 import './UserHomePage.css';
 import SideBar from './SideBar';
 import karina from '/Users/marielacruz/ada/bookedndbusy/src/images/karina.png'
+import julie from "/Users/marielacruz/ada/bookedndbusy/src/images/julie.jpg"
 // pass as a prop user data 
 // save user data as state 
 // or usecontext 
@@ -36,7 +37,7 @@ const Home = () => {
         <div  class="row justify-content-md-center">
             <div className ="col-md-2">
             <img 
-            src={karina}
+            src={julie}
             width="210"
             height="170"
             ></img>
