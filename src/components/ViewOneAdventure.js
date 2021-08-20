@@ -2,22 +2,7 @@ import React, { Component, useEffect, useContext, useState } from "react";
 import { firebaseLooper } from "../tools/firebaselooper";
 import { usersCollection } from "../tools/firebase";
 import { AuthContext } from "./AuthConnect";
-import firstday1 from "/Users/marielacruz/ada/bookedndbusy/src/images/firstday.JPG";
-import brunch from "/Users/marielacruz/ada/bookedndbusy/src/images/brunch.JPG";
-import toy from "/Users/marielacruz/ada/bookedndbusy/src/images/toy.JPG";
-import effiel from "/Users/marielacruz/ada/bookedndbusy/src/images/effiel.jpg";
-import secondary from "/Users/marielacruz/ada/bookedndbusy/src/images/seconday.JPG";
-import protest from "/Users/marielacruz/ada/bookedndbusy/src/images/protest.jpg";
-import nortedame from "/Users/marielacruz/ada/bookedndbusy/src/images/nortedame.JPG";
-import mus from "/Users/marielacruz/ada/bookedndbusy/src/images/mus.JPG";
-import mac from "/Users/marielacruz/ada/bookedndbusy/src/images/mac.JPG";
-import view from "/Users/marielacruz/ada/bookedndbusy/src/images/view.jpg";
-import cake from "/Users/marielacruz/ada/bookedndbusy/src/images/cake.jpg"
-import happy from "/Users/marielacruz/ada/bookedndbusy/src/images/happy.jpg"
-import beach from "/Users/marielacruz/ada/bookedndbusy/src/images/beach.jpg"
-import tats from "/Users/marielacruz/ada/bookedndbusy/src/images/tats.jpg"
-import bye from "/Users/marielacruz/ada/bookedndbusy/src/images/bye.jpg"
-import food from "/Users/marielacruz/ada/bookedndbusy/src/images/food.jpg"
+
 
 const ViewOneAdventure = (props) => {
   const { currentUser, userDetails } = useContext(AuthContext);
@@ -47,15 +32,11 @@ const ViewOneAdventure = (props) => {
   return (
     <div class="container">
       <h1 class="display-6">Your Adventure </h1>
-      <h2>Day 1 August 13th, 2021</h2>
+      <h2>Day 1 </h2>
 
-      {/*{results.map((result) => (*/}
+      {results.map((result) => (*
         <p>
-          {/*<span> {result.day}</span>*/}
-          <span>It's My Birthday! I landed in Miami very early this morning and I felt pretty exhausted by the afternoon.
- Once all my friends arrived, I felt a burst of energy. I am so happy they are here to celebrate my birthday weekend with me. 
-The weather is very different from what I am used to... 
- I had my birthday dinner at Crazy About You! The food and ambiance was amazing! </span>
+          <span> {result.day}</span>
           <p>Images</p>
          
           <div>
