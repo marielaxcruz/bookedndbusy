@@ -34,64 +34,32 @@ const ViewOneAdventure = (props) => {
       <h1 class="display-6">Your Adventure </h1>
       <h2>Day 1 </h2>
 
-      {results.map((result) => (*
+      {results.map((result) => (
         <p>
           <span> {result.day}</span>
           <p>Images</p>
          
           <div>
           <img
-            src={view}
+            src={result.travelphotos}
             alt="image"
             width="300"
-            height="400"
-          ></img>
-          <img
-            src={cake}
-            alt="image"
-            width="400"
             height="400"
           ></img>
          
           </div>
-          <h2>Day 2 August 14, 2021</h2>
-          <p>We had a very relaxing day at Miami Beach, Nancy and I got henna tattoos. I think I can see myself living here 👀 </p>
+          <h2>Day 2</h2>
+         
           <div>
           <img
-            src={beach}
-            alt="image"
-            width="300"
-            height="400"
-          ></img>
-          <img
-            src={tats}
-            alt="image"
-            width="400"
-            height="400"
-          ></img>
-        
-          
-          </div>
-          <h2>Day 3 August 15th,2021</h2>
-          <p>
-          Last day !! :( and had a fun time grabbing brunch at Bacon B**** . Definitely a gem! This trip was much needed. Next time I come to Miami I would love to spend more time here exploring more of the city and the rich culture. 
-          </p>
-          <div>
-          <img
-            src={food}
+            src={result.travelphotos}
             alt="image"
             width="350"
             height="400"
           ></img>
-          <img
-            src={bye}
-            alt="image"
-            width="400"
-            height="400"
-          ></img>
           </div>
         </p>
-    
+      ))};
     </div>
   );
 };
